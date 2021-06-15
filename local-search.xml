@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>344. 反转字符串</title>
+    <link href="/2021/06/15/leetcode/reverseStr/"/>
+    <url>/2021/06/15/leetcode/reverseStr/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/reverse-string/">https://leetcode-cn.com/problems/reverse-string/</a><br>执行用时：12 ms, 在所有 C++ 提交中击败了99.55% 的用户<br>内存消耗：22.7 MB, 在所有 C++ 提交中击败了5.09% 的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverseString</span><span class="hljs-params">(vector&lt;<span class="hljs-keyword">char</span>&gt;&amp; s)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>, right = s.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">char</span> t;<br>        <span class="hljs-keyword">while</span> (left&lt;right)&#123;<br>            t=s[left];<br>            s[left] = s[right];<br>            s[right]=t;<br>            left++;<br>            right--;<br>        &#125;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p>执行用时：1 ms, 在所有 Java 提交中击败了100.00% 的用户<br>内存消耗：45.1 MB, 在所有 Java 提交中击败了58.14% 的用户</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reverseString</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] s)</span> </span>&#123;<br>           <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>, right = s.length-<span class="hljs-number">1</span>;<br>           <span class="hljs-keyword">char</span> t;<br>           <span class="hljs-keyword">while</span> (left &lt; right)&#123;<br>               t = s[left];<br>               s[left] = s[right];<br>               s[right] = t;<br>               left++;<br>               right--;<br>           &#125;<br>       &#125;<br>   &#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>双指针</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>219. 存在重复元素 II</title>
     <link href="/2021/06/14/leetcode/containDuplicate/"/>
     <url>/2021/06/14/leetcode/containDuplicate/</url>
