@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>144. 二叉树的前序遍历</title>
+    <link href="/2021/06/17/leetcode/BinaryTreePre/"/>
+    <url>/2021/06/17/leetcode/BinaryTreePre/</url>
+    
+    <content type="html"><![CDATA[<p>如果先执行移动根节点指向右子树，再执行pop执行会慢4ms</p><p>题目链接：<a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">https://leetcode-cn.com/problems/binary-tree-preorder-traversal/</a><br>执行用时：0 ms, 在所有 C++ 提交中击败了100.00% 的用户<br>内存消耗：8.2 MB, 在所有 C++ 提交中击败了54.13% 的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * struct TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode *left;</span><br><span class="hljs-comment"> *     TreeNode *right;</span><br><span class="hljs-comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">preorderTraversal</span><span class="hljs-params">(TreeNode *root)</span> </span>&#123;<br>        vector&lt;<span class="hljs-keyword">int</span>&gt; res;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) &#123;<br>            <span class="hljs-keyword">return</span> res;<br>        &#125;<br>        stack&lt;TreeNode*&gt; S;<br>        <span class="hljs-keyword">while</span> (root || !S.<span class="hljs-built_in">empty</span>())&#123;<br>            <span class="hljs-keyword">while</span> (root)&#123;<br>                S.<span class="hljs-built_in">push</span>(root);<br>                res.<span class="hljs-built_in">push_back</span>(root-&gt;val);<br>                root = root-&gt;left;<br>            &#125;<br>            root = S.<span class="hljs-built_in">top</span>();<br>            S.<span class="hljs-built_in">pop</span>();<br>            root = root -&gt;right;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p>执行用时：0 ms, 在所有 C++ 提交中击败了100.00% 的用户<br>内存消耗：8.1 MB, 在所有 C++ 提交中击败了70.94% 的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preorder</span><span class="hljs-params">(TreeNode *root, vector&lt;<span class="hljs-keyword">int</span>&gt; &amp;res)</span></span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>)&#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        res.<span class="hljs-built_in">push_back</span>(root-&gt;val);<br>        <span class="hljs-built_in">preorder</span>(root-&gt;left,res);<br>        <span class="hljs-built_in">preorder</span>(root-&gt;right,res);<br>    &#125;<br>    <br>    <span class="hljs-function">vector&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">preorderTraversal</span><span class="hljs-params">(TreeNode *root)</span> </span>&#123;<br>        vector&lt;<span class="hljs-keyword">int</span>&gt; res;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) &#123;<br>            <span class="hljs-keyword">return</span> res;<br>        &#125;<br>        <span class="hljs-built_in">preorder</span>(root,res);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>二叉树</tag>
+      
+      <tag>递归</tag>
+      
+      <tag>栈</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>561. 数组拆分 I</title>
     <link href="/2021/06/16/leetcode/ArrayPartition/"/>
     <url>/2021/06/16/leetcode/ArrayPartition/</url>
