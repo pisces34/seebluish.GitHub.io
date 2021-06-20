@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>27. 移除元素</title>
+    <link href="/2021/06/20/leetcode/removeElement/"/>
+    <url>/2021/06/20/leetcode/removeElement/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/remove-element/">https://leetcode-cn.com/problems/remove-element/</a></p><p>执行用时：1 ms, 在所有 Java 提交中击败了100.00% 的用户<br>内存消耗：36.7 MB, 在所有 Java 提交中击败了96.64% 的用户</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">removeElement</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> count=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> temp;<br>        <span class="hljs-keyword">int</span> right = nums.length-<span class="hljs-number">1</span>;<br>        Arrays.sort(nums);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt; nums.length; ++i)&#123;<br>            <span class="hljs-keyword">if</span>(nums[i] !=val)&#123;<br>                count++;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i&lt;right)&#123;<br>                temp = nums[i];<br>                <span class="hljs-keyword">if</span> (nums[right]!=temp)&#123;<br>                    nums[i] = nums[right];<br>                    nums[right] = temp;<br>                    count++;<br>                &#125;<br>                right--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>java</tag>
+      
+      <tag>双指针</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>485. 最大连续 1 的个数</title>
     <link href="/2021/06/19/leetcode/findMaxConsequence1/"/>
     <url>/2021/06/19/leetcode/findMaxConsequence1/</url>
