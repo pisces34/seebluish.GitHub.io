@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>209. 长度最小的子数组</title>
+    <link href="/2021/06/21/leetcode/MaxmiumSize/"/>
+    <url>/2021/06/21/leetcode/MaxmiumSize/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/">https://leetcode-cn.com/problems/minimum-size-subarray-sum/</a><br>执行用时：152 ms, 在所有 Java 提交中击败了10.69% 的用户<br>内存消耗：38.5 MB, 在所有 Java 提交中击败了33.53% 的用户</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">minSubArrayLen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> target, <span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> len=<span class="hljs-number">100001</span>;<br>        <span class="hljs-keyword">int</span> sum;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (target &lt;= nums[i]) &#123;<br>                len = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            sum=nums[i];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=i+<span class="hljs-number">1</span>; j&lt;nums.length;j++) &#123;<br>                sum +=nums[j];<br>                <span class="hljs-keyword">if</span> ( sum&gt;= target) &#123;<br>                    len = Math.min(len,j-i+<span class="hljs-number">1</span>);<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (len&lt;<span class="hljs-number">100001</span>)&#123;<br>            <span class="hljs-keyword">return</span> len;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>java</tag>
+      
+      <tag>双指针</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>27. 移除元素</title>
     <link href="/2021/06/20/leetcode/removeElement/"/>
     <url>/2021/06/20/leetcode/removeElement/</url>
