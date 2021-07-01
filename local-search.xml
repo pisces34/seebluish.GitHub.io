@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>118. 杨辉三角</title>
+    <link href="/2021/07/01/leetcode/yhtriangle1/"/>
+    <url>/2021/07/01/leetcode/yhtriangle1/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/pascals-triangle/">https://leetcode-cn.com/problems/pascals-triangle/</a></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; generate(<span class="hljs-keyword">int</span> numRows) &#123;<br>        List&lt;List&lt;Integer&gt;&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numRows; i++) &#123;<br>            List&lt;Integer&gt; L = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= i; j++) &#123;<br>                <span class="hljs-keyword">if</span> (j == <span class="hljs-number">0</span> || i == j) &#123;<br>                    L.add(<span class="hljs-number">1</span>);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    L.add(res.get(i - <span class="hljs-number">1</span>).get(j - <span class="hljs-number">1</span>) + res.get(i - <span class="hljs-number">1</span>).get(j));<br>                &#125;<br>            &#125;<br>            res.add(L);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>209. 长度最小的子数组</title>
     <link href="/2021/06/21/leetcode/MaxmiumSize/"/>
     <url>/2021/06/21/leetcode/MaxmiumSize/</url>
