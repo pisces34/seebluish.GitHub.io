@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      218 字
+      225 字
     </span>
   
 
@@ -230,8 +230,7 @@
             <h1 style="display: none">153. 寻找旋转排序数组中的最小值</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/</a><br>二分法</p>
-<p>执行用时：16 ms, 在所有 Swift 提交中击败了88.24%的用户<br>内存消耗：13.7 MB, 在所有 Swift 提交中击败了50.98%的用户</p>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/</a><br>二分法, 刚刚开始学习swift<br>执行用时：16 ms, 在所有 Swift 提交中击败了88.24%的用户<br>内存消耗：13.7 MB, 在所有 Swift 提交中击败了50.98%的用户</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">findMin</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">nums</span>: [<span class="hljs-type">Int</span>])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> low <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">var</span> high <span class="hljs-operator">=</span> nums.count <span class="hljs-operator">-</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">while</span> low <span class="hljs-operator">&lt;</span> high &#123;<br>            <span class="hljs-keyword">var</span> pivot <span class="hljs-operator">=</span> low <span class="hljs-operator">+</span> (high <span class="hljs-operator">-</span> low)<span class="hljs-operator">/</span><span class="hljs-number">2</span><br>            <span class="hljs-keyword">if</span> nums[high] <span class="hljs-operator">&gt;</span> nums[pivot] &#123;<br>                high <span class="hljs-operator">=</span> pivot<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                low <span class="hljs-operator">=</span> pivot <span class="hljs-operator">+</span> <span class="hljs-number">1</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[low]<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 <p>普通O(n)<br>执行用时：0 ms, 在所有 Java 提交中击败了100.00% 的用户<br>内存消耗：37.9 MB, 在所有 Java 提交中击败了42.64% 的用户</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findMin</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left = nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">int</span> flag = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> min = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length-<span class="hljs-number">1</span>; i++) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i]&gt;nums[i+<span class="hljs-number">1</span>])&#123;<br>                min = nums[i+<span class="hljs-number">1</span>];<br>                flag = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (flag == <span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">return</span> min;<br>        &#125;<br>        <span class="hljs-keyword">return</span> left;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -273,6 +272,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/07/22/leetcode/removeDuplicate/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">26. 删除有序数组中的重复项</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
