@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>283. 移动零</title>
+    <link href="/2021/07/23/leetcode/moveZero/"/>
+    <url>/2021/07/23/leetcode/moveZero/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/move-zeroes/">https://leetcode-cn.com/problems/move-zeroes/</a><br>执行用时：32 ms, 在所有 Swift 提交中击败了99.72%的用户<br>内存消耗：14 MB, 在所有 Swift 提交中击败了90.08%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs Swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">moveZeroes</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">nums</span>: <span class="hljs-keyword">inout</span> [<span class="hljs-type">Int</span>])</span> &#123;<br>        <span class="hljs-keyword">var</span> slow <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span><span class="hljs-operator">..&lt;</span>nums.count &#123;<br>            <span class="hljs-keyword">if</span> nums[i] <span class="hljs-operator">==</span> <span class="hljs-number">0</span> <span class="hljs-operator">&amp;&amp;</span> nums[slow] <span class="hljs-operator">!=</span> <span class="hljs-number">0</span> &#123;<br>                slow <span class="hljs-operator">=</span> i<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> nums[i] <span class="hljs-operator">!=</span> <span class="hljs-number">0</span> <span class="hljs-operator">&amp;&amp;</span> nums[slow] <span class="hljs-operator">==</span> <span class="hljs-number">0</span> &#123;<br>                nums[slow] <span class="hljs-operator">=</span> nums[i]<br>                slow <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>                nums[i] <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>双指针</tag>
+      
+      <tag>swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>26. 删除有序数组中的重复项</title>
     <link href="/2021/07/22/leetcode/removeDuplicate/"/>
     <url>/2021/07/22/leetcode/removeDuplicate/</url>
