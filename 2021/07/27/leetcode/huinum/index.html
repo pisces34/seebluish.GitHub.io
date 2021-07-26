@@ -20,9 +20,25 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>分类 - leetcode算法题 - Pisces34</title>
+  <title>9. 回文数 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -149,9 +165,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分类 - leetcode算法题">
+            <span class="h2" id="subtitle" title="9. 回文数">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-27 00:06" pubdate>
+        2021年7月27日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      101 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -164,64 +217,91 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 34 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/05/08/leetcode/ContainerWithMostWater/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">11. 盛最多水的容器</span>
-      <time style="float: right;">05-08</time>
-    </a>
-  
-    
-    <a href="/2021/05/08/leetcode/twoSum/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">1. 两数之和(violence)</span>
-      <time style="float: right;">05-08</time>
-    </a>
-  
-    
-    <a href="/2021/05/08/leetcode/twoSum1/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">1. 两数之和 （two-pointers）</span>
-      <time style="float: right;">05-08</time>
-    </a>
-  
-    
-    <a href="/2021/05/08/leetcode/twoSum2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">1. 两数之和 (HashMap)</span>
-      <time style="float: right;">05-08</time>
-    </a>
-  
-</div>
 
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/">1</a><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/2/#board">2</a><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/3/#board">3</a><span class="page-number current">4</span>
-    </span>
-  </nav>
-
-
-
-
-              </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">9. 回文数</h1>
+            
+            <div class="markdown-body">
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/palindrome-number/">https://leetcode-cn.com/problems/palindrome-number/</a><br>执行用时：28 ms, 在所有 Swift 提交中击败了98.32%的用户<br>内存消耗14MB, 在所有 Swift 提交中击败了12.74%的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs Swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isPalindrome</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">x</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> x <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>        &#125;<br>        <span class="hljs-keyword">var</span> value <span class="hljs-operator">=</span> x<br>        <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> value <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> &#123;<br>            res <span class="hljs-operator">=</span> res<span class="hljs-operator">*</span><span class="hljs-number">10</span> <span class="hljs-operator">+</span> (value <span class="hljs-operator">%</span> <span class="hljs-number">10</span>)<br>            value <span class="hljs-operator">/=</span> <span class="hljs-number">10</span><br>        &#125;<br>        <span class="hljs-keyword">if</span> res <span class="hljs-operator">==</span> x &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/">leetcode算法题</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%9E%E6%96%87/">回文</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/24/leetcode/designLinkedList/">
+                        <span class="hidden-mobile">707. 设计链表</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -326,9 +406,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 

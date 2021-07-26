@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>9. 回文数</title>
+    <link href="/2021/07/27/leetcode/huinum/"/>
+    <url>/2021/07/27/leetcode/huinum/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/palindrome-number/">https://leetcode-cn.com/problems/palindrome-number/</a><br>执行用时：28 ms, 在所有 Swift 提交中击败了98.32%的用户<br>内存消耗14MB, 在所有 Swift 提交中击败了12.74%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs Swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isPalindrome</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">x</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> x <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>        &#125;<br>        <span class="hljs-keyword">var</span> value <span class="hljs-operator">=</span> x<br>        <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> value <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> &#123;<br>            res <span class="hljs-operator">=</span> res<span class="hljs-operator">*</span><span class="hljs-number">10</span> <span class="hljs-operator">+</span> (value <span class="hljs-operator">%</span> <span class="hljs-number">10</span>)<br>            value <span class="hljs-operator">/=</span> <span class="hljs-number">10</span><br>        &#125;<br>        <span class="hljs-keyword">if</span> res <span class="hljs-operator">==</span> x &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+      <tag>回文</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>707. 设计链表</title>
     <link href="/2021/07/24/leetcode/designLinkedList/"/>
     <url>/2021/07/24/leetcode/designLinkedList/</url>
