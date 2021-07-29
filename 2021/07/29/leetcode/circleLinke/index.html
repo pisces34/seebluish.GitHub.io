@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>7. 整数反转 - Pisces34</title>
+  <title>141. 环形链表 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="7. 整数反转">
+            <span class="h2" id="subtitle" title="141. 环形链表">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-27 23:34" pubdate>
-        2021年7月27日 晚上
+      <time datetime="2021-07-29 13:11" pubdate>
+        2021年7月29日 下午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      188 字
+      359 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      5
        分钟
     </span>
   
@@ -227,14 +227,18 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">7. 整数反转</h1>
+            <h1 style="display: none">141. 环形链表</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-integer/">https://leetcode-cn.com/problems/reverse-integer/</a><br>执行用时：0 ms, 在所有 C++ 提交中击败了100.00%的用户<br>内存消耗：5.8 MB, 在所有 C++ 提交中击败了51.54%的用户</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">reverse</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>        <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (x!=<span class="hljs-number">0</span>)&#123;<br>            res = res*<span class="hljs-number">10</span> + x%<span class="hljs-number">10</span>;<br>            x /= <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (res&gt;<span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>,<span class="hljs-number">31</span>)<span class="hljs-number">-1</span> || res&lt;(<span class="hljs-built_in">pow</span>(<span class="hljs-number">-2</span>,<span class="hljs-number">31</span>)))&#123;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle/">https://leetcode-cn.com/problems/linked-list-cycle/</a><br>类比于操场跑步。快指针每次走两步，慢指针每次走一步，如果存在环，快指针一定会与慢指针相遇。</p>
+<p>执行用时：64 ms, 在所有 Swift 提交中击败了96.77%的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs Swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">hasCycle</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">head</span>: <span class="hljs-type">ListNode</span>?)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> head <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>        &#125;<br>        <span class="hljs-keyword">var</span> fast <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">var</span> slow <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">while</span> fast <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> <span class="hljs-operator">&amp;&amp;</span> fast<span class="hljs-operator">?</span>.next <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> &#123;<br>            fast <span class="hljs-operator">=</span> fast<span class="hljs-operator">?</span>.next<span class="hljs-operator">?</span>.next<br>            slow <span class="hljs-operator">=</span> slow<span class="hljs-operator">?</span>.next<br>            <span class="hljs-keyword">if</span> fast <span class="hljs-operator">===</span> slow &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<p>除了用map来存指针地址之外，题目val的值是有范围的，所以将访问过的值修改为区间以外的即可当作标志。<br>下次访问时若值为这个标志说明指针已经指回到了前面访问过的节点。</p>
+<p>执行用时：68 ms, 在所有 Swift 提交中击败了88.17%的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs Swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">hasCycle</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">head</span>: <span class="hljs-type">ListNode</span>?)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> head <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span> &#123;<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>&#125;<br>        <span class="hljs-keyword">var</span> fast <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">var</span> slow <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">while</span> fast <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> <span class="hljs-operator">&amp;&amp;</span> fast<span class="hljs-operator">?</span>.next <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> &#123;<br>            fast <span class="hljs-operator">=</span> fast<span class="hljs-operator">?</span>.next<span class="hljs-operator">?</span>.next<br>            slow <span class="hljs-operator">=</span> slow<span class="hljs-operator">?</span>.next<br>            <span class="hljs-keyword">if</span> fast <span class="hljs-operator">===</span> slow &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>执行用时： 4 ms , 在所有 Swift 提交中击败了 95.41% 的用户<br>内存消耗:13.7 MB , 在所有 Swift 提交中击败了 25.63% 的用户</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs Swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reverse</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">x</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> value <span class="hljs-operator">=</span> x<br>        <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> value <span class="hljs-operator">!=</span> <span class="hljs-number">0</span> &#123;<br>            res <span class="hljs-operator">=</span> res<span class="hljs-operator">*</span><span class="hljs-number">10</span> <span class="hljs-operator">+</span> value<span class="hljs-operator">%</span><span class="hljs-number">10</span><br>            <span class="hljs-keyword">if</span> res <span class="hljs-operator">&gt;</span> <span class="hljs-type">Int32</span>.max <span class="hljs-operator">||</span> res <span class="hljs-operator">&lt;</span> <span class="hljs-type">Int32</span>.min &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            &#125;<br>            value <span class="hljs-operator">/=</span> <span class="hljs-number">10</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> res<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>执行用时：4 ms, 在所有 C++ 提交中击败了99.77%的用户<br>内存消耗：8 MB, 在所有 C++ 提交中击败了30.61%的用户</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">hasCycle</span><span class="hljs-params">(ListNode *head)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        ListNode *point = head;<br>        <span class="hljs-keyword">while</span> (point-&gt;next != <span class="hljs-literal">NULL</span>)&#123;<br>            <span class="hljs-keyword">if</span> (point-&gt;val == <span class="hljs-number">100001</span>)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>            point-&gt;val = <span class="hljs-number">100001</span>;<br>            point = point-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -253,6 +257,8 @@
                     
                       <a class="hover-with-bg" href="/tags/C/">C++</a>
                     
+                      <a class="hover-with-bg" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+                    
                       <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
                     
                   </div>
@@ -270,18 +276,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/29/leetcode/circleLinke/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">141. 环形链表</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/27/leetcode/huinum/">
-                        <span class="hidden-mobile">9. 回文数</span>
+                      <a href="/2021/07/27/leetcode/reverseInt/">
+                        <span class="hidden-mobile">7. 整数反转</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
