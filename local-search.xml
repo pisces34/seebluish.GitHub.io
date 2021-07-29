@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>142. 环形链表 II</title>
+    <link href="/2021/07/29/leetcode/circleLinked2/"/>
+    <url>/2021/07/29/leetcode/circleLinked2/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">https://leetcode-cn.com/problems/linked-list-cycle-ii/</a></p><p>解释来自于魏梦舒的《算法漫画》，简单概括成文字<br>（头节点）————D——（入环点）———S1———（首次相遇点）————S2————（回到入环点）<br>距离分别为 D S1 S2<br>1，慢指针每次走一步，到达相遇点时经过了 D+S1的距离<br>2，快指针每次走两步，当它到第一次到相遇点时经过了D+S1的距离，但是此时慢指针还未达到相遇点<br>3，所以它会一直在环里打圈，大概是n圈后才等到慢指针到达相遇点，环的长度一圈为S1+S2，那么快指针走过的总长度就是D+S1+n（S1+S2）<br>4，因为快指针速度是慢指针的两倍，同时出发经过相同时间，快指针走过的距离即慢指针的两倍<br>5，可以推出 2(D+S1) = D+S1+n(S1+S2)<br>6，整理后即为 D = (n-1)(S1+S2)+S2<br>7，D的距离就是从头节点到入环点的距离，等于经过（n-1）圈再加上S2的距离<br>8，假设经过1圈相遇，D = S2，此时慢指针从相遇点开始移动，快指针回到头节点向后移动，相等时即为入环点</p><p>无论是多少圈，等式右边表示慢指针之后将要移动的距离，都等于等式左边的D，遍历完D的长度就到了入环点。<br>注意判断传入的空链表和长度为1的链表。</p><p>执行用时：52 ms, 在所有 Swift 提交中击败了95.43%的用户<br>内存消耗：14.9 MB, 在所有 Swift 提交中击败了77.14%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs Swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">detectCycle</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">head</span>: <span class="hljs-type">ListNode</span>?)</span> -&gt; <span class="hljs-type">ListNode</span>? &#123;<br>        <span class="hljs-keyword">var</span> fast <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">var</span> slow <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">while</span> fast <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> <span class="hljs-operator">&amp;&amp;</span> fast<span class="hljs-operator">?</span>.next <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> &#123;<br>            fast <span class="hljs-operator">=</span> fast<span class="hljs-operator">?</span>.next<span class="hljs-operator">?</span>.next<br>            slow <span class="hljs-operator">=</span> slow<span class="hljs-operator">?</span>.next<br>            <span class="hljs-keyword">if</span> fast <span class="hljs-operator">===</span> slow &#123;<br>                <span class="hljs-keyword">break</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> fast <span class="hljs-operator">===</span> <span class="hljs-literal">nil</span> <span class="hljs-operator">||</span> fast<span class="hljs-operator">?</span>.next <span class="hljs-operator">===</span> <span class="hljs-literal">nil</span> &#123; <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>&#125;<br>        fast <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">while</span> fast <span class="hljs-operator">!==</span> slow &#123;<br>            fast <span class="hljs-operator">=</span> fast<span class="hljs-operator">?</span>.next<br>            slow <span class="hljs-operator">=</span> slow<span class="hljs-operator">?</span>.next<br>        &#125;<br>        <span class="hljs-keyword">return</span> fast<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>执行用时：8 ms, 在所有 C++ 提交中击败了88.53%的用户<br>内存消耗：7.5 MB, 在所有 C++ 提交中击败了63.93%的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode *<span class="hljs-title">detectCycle</span><span class="hljs-params">(ListNode *head)</span> </span>&#123;<br>        ListNode *fast = head;<br>        ListNode *slow = head;<br>        <span class="hljs-keyword">while</span> (fast &amp;&amp; fast-&gt;next)&#123;<br>            fast = fast-&gt;next-&gt;next;<br>            slow = slow-&gt;next;<br>            <span class="hljs-keyword">if</span> (slow == fast)&#123;<span class="hljs-keyword">break</span>;&#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (fast == <span class="hljs-literal">NULL</span> || fast-&gt;next == <span class="hljs-literal">NULL</span> )&#123;<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;&#125;<br>        fast = head;<br>        <span class="hljs-keyword">while</span> (fast != slow)&#123;<br>            fast = fast-&gt;next;<br>            slow = slow-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> fast;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>双指针</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>141. 环形链表</title>
     <link href="/2021/07/29/leetcode/circleLinke/"/>
     <url>/2021/07/29/leetcode/circleLinke/</url>
