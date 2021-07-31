@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>19. 删除链表的倒数第 N 个结点</title>
+    <link href="/2021/07/31/leetcode/remove-nth-node/"/>
+    <url>/2021/07/31/leetcode/remove-nth-node/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/">https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/</a><br>执行用时：0 ms, 在所有 C++ 提交中击败了100.00%的用户<br>内存消耗：10.3 MB, 在所有 C++ 提交中击败了75.79%的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode* <span class="hljs-title">removeNthFromEnd</span><span class="hljs-params">(ListNode* head, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        ListNode *fast = head;<br>        <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (fast-&gt;next)&#123;<br>            fast = fast-&gt;next;<br>            count++;    <span class="hljs-comment">//最后一个节点前的节点数</span><br>        &#125;<br>        <span class="hljs-keyword">if</span>(count + <span class="hljs-number">1</span> == n)&#123;<br>            head = head-&gt;next;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            count = count  - n;<br>            <span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span> &amp;&amp; n == <span class="hljs-number">1</span>)&#123;<br>                head-&gt;next = <span class="hljs-literal">NULL</span>;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                fast = head;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; count; ++i) &#123;<br>                    fast = fast-&gt;next;<br>                &#125;<br>                fast-&gt;next = fast-&gt;next-&gt;next;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>双指针</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>242. 有效的字母异位词</title>
     <link href="/2021/07/31/leetcode/validanagram/"/>
     <url>/2021/07/31/leetcode/validanagram/</url>
