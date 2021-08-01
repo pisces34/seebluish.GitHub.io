@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      382 字
+      378 字
     </span>
   
 
@@ -231,8 +231,8 @@
             
             <div class="markdown-body">
               <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-linked-list-elements/">https://leetcode-cn.com/problems/remove-linked-list-elements/</a></p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>执行用时：52 ms, 在所有 Swift 提交中击败了97.20%的用户<br>内存消耗：15.3 MB, 在所有 Swift 提交中击败了53.20%的用户</p>
-<h3 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h3><p>两根指针效率和一根指针在这里差距不大，也挺好理解</p>
+<p>执行用时：52 ms, 在所有 Swift 提交中击败了97.20%的用户<br>内存消耗：15.3 MB, 在所有 Swift 提交中击败了53.20%的用户</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>两根指针效率和一根指针在这里差距不大，也挺好理解</p>
 <p>一根指针的情况就是只有pre，判断pre.next的值，如果要删除，就使pre.next 指向删除节点的next也就是pre.next.next<br>两根指针的情况分析：<br>1，首先设置虚拟头节点<br>2，慢指针指向头节点，处于前一个位置<br>3，cur指针指向真实的头节点<br>4，当cur的节点值和传入的val相等时，向后移动cur<br>5，使前一个指针pre指向更新后的cur<br>6，如果不想等则pre 和 cur一起向后移动</p>
 <h3 id="两根指针代码"><a href="#两根指针代码" class="headerlink" title="两根指针代码"></a>两根指针代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">removeElements</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">head</span>: <span class="hljs-type">ListNode</span>?, <span class="hljs-keyword">_</span> <span class="hljs-params">val</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">ListNode</span>? &#123;<br>        <span class="hljs-keyword">var</span> dummy <span class="hljs-operator">=</span> <span class="hljs-type">ListNode</span>(<span class="hljs-number">0</span>,head)<br>        <span class="hljs-keyword">var</span> pre <span class="hljs-operator">=</span> dummy<br>        <span class="hljs-keyword">var</span> cur <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">while</span> cur <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> &#123;<br>            <span class="hljs-keyword">if</span> cur<span class="hljs-operator">?</span>.val <span class="hljs-operator">==</span> val &#123;<br>                cur <span class="hljs-operator">=</span> cur<span class="hljs-operator">?</span>.next<br>                pre.next <span class="hljs-operator">=</span> cur<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                cur <span class="hljs-operator">=</span> cur<span class="hljs-operator">?</span>.next<br>                pre <span class="hljs-operator">=</span> pre.next<span class="hljs-operator">!</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dummy.next<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
