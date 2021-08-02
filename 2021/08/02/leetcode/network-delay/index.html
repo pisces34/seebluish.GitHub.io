@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>Pisces34</title>
+  <title>743. 网络延迟时间 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="743. 网络延迟时间">
               
             </span>
 
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      337 字
+      382 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      5
        分钟
     </span>
   
@@ -227,16 +227,37 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">743. 网络延迟时间</h1>
             
             <div class="markdown-body">
-              <h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>对着@GTAlgorithm的题解写出来的，增加了一点点注释<br>每次找最短路径，到其他各点的最短路径中的最大值也就是消息能发到的最少时间<br>如果还有一个正无穷也就是到不了的距离,说明无法全部送到</p>
+              <p>执行用时：412 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.9 MB, 在所有 Swift 提交中击败了100.00%的用户</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>对着@GTAlgorithm的题解写出来的swift版本，增加了一点点注释<br>每次找最短路径，到其他各点的最短路径中的最大值也就是消息能发到的最少时间<br>如果还有一个正无穷也就是到不了的距离,说明无法全部送到</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">networkDelayTime</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">times</span>: [[<span class="hljs-type">Int</span>]], <span class="hljs-keyword">_</span> <span class="hljs-params">n</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">k</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">let</span> maxDist <span class="hljs-operator">=</span> <span class="hljs-type">Int</span>.max<span class="hljs-operator">/</span><span class="hljs-number">2</span><br>        <br>        <span class="hljs-comment">//邻接矩阵存储边信息</span><br>        <span class="hljs-keyword">var</span> graph <span class="hljs-operator">=</span> [[<span class="hljs-type">Int</span>]](repeating: [<span class="hljs-type">Int</span>](repeating: maxDist, count: n), count: n)<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> times.count &#123;<br>            <span class="hljs-comment">// 边序号从 0 开始</span><br>            <span class="hljs-keyword">let</span> x <span class="hljs-operator">=</span> times[i][<span class="hljs-number">0</span>] <span class="hljs-operator">-</span> <span class="hljs-number">1</span>, y <span class="hljs-operator">=</span> times[i][<span class="hljs-number">1</span>] <span class="hljs-operator">-</span> <span class="hljs-number">1</span><br>            graph[x][y] <span class="hljs-operator">=</span> times[i][<span class="hljs-number">2</span>]<br>        &#125;<br>        <span class="hljs-comment">// 从源点到某点的距离数组</span><br>        <span class="hljs-keyword">var</span> dist <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>](repeating: maxDist, count: n)<br>        <br>        <span class="hljs-comment">// 由于从 k 开始，所以该点距离设为 0，也即源点</span><br>        dist[k <span class="hljs-operator">-</span> <span class="hljs-number">1</span>] <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <br>        <span class="hljs-comment">//表示节点是否被更新的数组</span><br>        <span class="hljs-keyword">var</span> used <span class="hljs-operator">=</span> [<span class="hljs-type">Bool</span>](repeating: <span class="hljs-literal">false</span>, count: n)<br>        <br>        <span class="hljs-keyword">for</span> <span class="hljs-keyword">_</span> <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>            <span class="hljs-keyword">var</span> x <span class="hljs-operator">=</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span><br>            <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>                <span class="hljs-comment">//x == -1说明是改变起点后(矩阵中换行了)</span><br>                <span class="hljs-comment">//寻找新dist中的最小值且未被访问过</span><br>                <span class="hljs-keyword">if</span> (<span class="hljs-operator">!</span>used[y] <span class="hljs-operator">&amp;&amp;</span> (x <span class="hljs-operator">==</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span> <span class="hljs-operator">||</span> dist[y] <span class="hljs-operator">&lt;</span> dist[x])) &#123;<br>                    x <span class="hljs-operator">=</span> y<br>                &#125;<br>            &#125;<br>            <br>            <span class="hljs-comment">//更新该点到邻接点的距离</span><br>            used[x] <span class="hljs-operator">=</span> <span class="hljs-literal">true</span><br>            <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>                dist[y] <span class="hljs-operator">=</span> <span class="hljs-built_in">min</span>(dist[y], dist[x] <span class="hljs-operator">+</span> graph[x][y])<br>            &#125;<br>            <br>        &#125;<br>        <span class="hljs-comment">//找到距离最远的点</span><br>        <span class="hljs-keyword">let</span> res <span class="hljs-operator">=</span> dist.max()<span class="hljs-operator">!</span><br>        <span class="hljs-keyword">return</span> res <span class="hljs-operator">==</span> maxDist <span class="hljs-operator">?</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span> : res<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/">leetcode算法题</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5/">邻接矩阵</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Dijkstra/">Dijkstra</a>
+                    
+                  </div>
                 
               </div>
               
