@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>328. 奇偶链表</title>
+    <link href="/2021/08/02/leetcode/oddevenlinked/"/>
+    <url>/2021/08/02/leetcode/oddevenlinked/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/odd-even-linked-list/">https://leetcode-cn.com/problems/odd-even-linked-list/</a></p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>让奇数节点的指针指向偶数节点指针的下一个节点，移动奇数指针到这个新节点，<br>新节点的下一个指针也就是前面偶数节点的下一个，交替移动。<br>循环判断条件：偶数节点必然先达到链表尾部。<br>（增加判断even != nil 可以省略前面链表小于等于3的判断，因为1，2，3个节点时已经排好序了</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">oddEvenList</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">head</span>: <span class="hljs-type">ListNode</span>?)</span> -&gt; <span class="hljs-type">ListNode</span>? &#123;<br>        <span class="hljs-keyword">if</span> head <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span> <span class="hljs-operator">||</span> head<span class="hljs-operator">?</span>.next <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span> <span class="hljs-operator">||</span> head<span class="hljs-operator">?</span>.next<span class="hljs-operator">?</span>.next <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span>&#123;<br>            <span class="hljs-keyword">return</span> head<br>        &#125;<br>        <span class="hljs-keyword">var</span> odd <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">var</span> even <span class="hljs-operator">=</span> head<span class="hljs-operator">?</span>.next<br>        <span class="hljs-keyword">var</span> evenHead <span class="hljs-operator">=</span> even<br>        <span class="hljs-keyword">while</span> even<span class="hljs-operator">?</span>.next <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> &#123;<br>            odd<span class="hljs-operator">?</span>.next <span class="hljs-operator">=</span> even<span class="hljs-operator">?</span>.next<br>            odd <span class="hljs-operator">=</span> odd<span class="hljs-operator">?</span>.next<br>            even<span class="hljs-operator">?</span>.next <span class="hljs-operator">=</span> odd<span class="hljs-operator">?</span>.next<br>            even <span class="hljs-operator">=</span> even<span class="hljs-operator">?</span>.next<br>        &#125;<br>        odd<span class="hljs-operator">?</span>.next <span class="hljs-operator">=</span> evenHead<br>        <span class="hljs-keyword">return</span> head<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">ListNode *<span class="hljs-title">oddEvenList</span><span class="hljs-params">(ListNode *head)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (!head || !head-&gt;next) <span class="hljs-keyword">return</span> head;<br>        ListNode *odd = head;<br><br>        ListNode *even = head-&gt;next;<br>        ListNode *evenHead = even;<br>        <span class="hljs-keyword">while</span> (even &amp;&amp; even-&gt;next)&#123;<br>           odd-&gt;next = even-&gt;next;<br>           odd = odd-&gt;next;<br>           even-&gt;next = odd-&gt;next;<br>           even = even-&gt;next;<br>        &#125;<br>        odd-&gt;next = evenHead;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>链表</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>203. 移除链表元素</title>
     <link href="/2021/08/01/leetcode/removeLinkedList/"/>
     <url>/2021/08/01/leetcode/removeLinkedList/</url>
