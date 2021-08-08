@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>1137. 第 N 个泰波那契数</title>
+    <link href="/2021/08/08/leetcode/n-th-tribonacci/"/>
+    <url>/2021/08/08/leetcode/n-th-tribonacci/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/n-th-tribonacci-number/">https://leetcode-cn.com/problems/n-th-tribonacci-number/</a></p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>预处理n = 1，2，3的情况<br>再迭代模拟运算</p><p>执行用时：0 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.3 MB, 在所有 Swift 提交中击败了70.83%的用户</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">tribonacci</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">n</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> t0 <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, t1 <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, t2 <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, t3 <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">var</span> count <span class="hljs-operator">=</span> n<span class="hljs-operator">-</span><span class="hljs-number">2</span><br>        <span class="hljs-keyword">if</span> count <span class="hljs-operator">==</span> <span class="hljs-number">0</span> <span class="hljs-operator">||</span> count <span class="hljs-operator">==</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> count <span class="hljs-operator">==</span> <span class="hljs-operator">-</span><span class="hljs-number">2</span>&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        &#125;<br>        <span class="hljs-keyword">while</span> count <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> &#123;<br>            t3 <span class="hljs-operator">=</span> t0 <span class="hljs-operator">+</span> t1 <span class="hljs-operator">+</span> t2<br>            t0 <span class="hljs-operator">=</span> t1<br>            t1 <span class="hljs-operator">=</span> t2<br>            t2 <span class="hljs-operator">=</span> t3<br>            count <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> t3<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>457. 环形数组是否存在循环</title>
     <link href="/2021/08/08/leetcode/circleArray/"/>
     <url>/2021/08/08/leetcode/circleArray/</url>
