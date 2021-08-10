@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      171 字
+      214 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      3
        分钟
     </span>
   
@@ -231,7 +231,8 @@
             
             <div class="markdown-body">
               <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/arithmetic-slices/">https://leetcode-cn.com/problems/arithmetic-slices/</a></p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>用快指针递增，来判断下一对数值之间的差是否与前面一对数值的差，相等则为等差数列计数增加，<br>快指针向后移动，即滑动窗口扩大。<br>否则退出循环，慢指针递增，进行一下一组子数列的判断。<br><img src="https://pic.leetcode-cn.com/1628602562-deHCKh-image.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>用快指针递增，来判断下一对数值之间的差是否与前面一对数值的差，相等则为等差数列计数增加，<br>快指针向后移动，即滑动窗口扩大。<br>否则退出循环，慢指针递增，进行一下一组子数列的判断。</p>
+<p>执行用时：8 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.8 MB, 在所有 Swift 提交中击败了40.00%的用户</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">numberOfArithmeticSlices</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">nums</span>: [<span class="hljs-type">Int</span>])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> length <span class="hljs-operator">=</span> nums.count<br>        <span class="hljs-keyword">if</span> length <span class="hljs-operator">&lt;</span> <span class="hljs-number">3</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        &#125;<br>        <span class="hljs-keyword">var</span> slow <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, fast <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">var</span> count <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> slow <span class="hljs-operator">!=</span> length <span class="hljs-operator">-</span> <span class="hljs-number">1</span> &#123;<br>            <span class="hljs-keyword">var</span> diff <span class="hljs-operator">=</span> nums[fast]<span class="hljs-operator">-</span>nums[slow]<br>            <span class="hljs-keyword">while</span> fast <span class="hljs-operator">!=</span> length <span class="hljs-operator">-</span> <span class="hljs-number">1</span> &#123;<br>                <span class="hljs-keyword">if</span>  diff <span class="hljs-operator">==</span> nums[fast<span class="hljs-operator">+</span><span class="hljs-number">1</span>] <span class="hljs-operator">-</span> nums[fast] &#123;<br>                    count <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>                    fast <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>                    <span class="hljs-keyword">continue</span><br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    <span class="hljs-keyword">break</span><br>                &#125;<br>            &#125;<br>            slow <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            fast <span class="hljs-operator">=</span> slow <span class="hljs-operator">+</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> count<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
