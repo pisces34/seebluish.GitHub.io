@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>413. 等差数列划分 - Pisces34</title>
+  <title>234. 回文链表 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="413. 等差数列划分">
+            <span class="h2" id="subtitle" title="234. 回文链表">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-10 21:39" pubdate>
-        2021年8月10日 晚上
+      <time datetime="2021-08-13 21:59" pubdate>
+        2021年8月13日 晚上
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      214 字
+      227 字
     </span>
   
 
@@ -227,13 +227,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">413. 等差数列划分</h1>
+            <h1 style="display: none">234. 回文链表</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/arithmetic-slices/">https://leetcode-cn.com/problems/arithmetic-slices/</a></p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>用快指针递增，来判断下一对数值之间的差是否与前面一对数值的差，相等则为等差数列计数增加，<br>快指针向后移动，即滑动窗口扩大。<br>否则退出循环，慢指针递增，进行一下一组子数列的判断。</p>
-<p>执行用时：8 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.8 MB, 在所有 Swift 提交中击败了40.00%的用户</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">numberOfArithmeticSlices</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">nums</span>: [<span class="hljs-type">Int</span>])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> length <span class="hljs-operator">=</span> nums.count<br>        <span class="hljs-keyword">if</span> length <span class="hljs-operator">&lt;</span> <span class="hljs-number">3</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        &#125;<br>        <span class="hljs-keyword">var</span> slow <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, fast <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">var</span> count <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> slow <span class="hljs-operator">!=</span> length <span class="hljs-operator">-</span> <span class="hljs-number">1</span> &#123;<br>            <span class="hljs-keyword">var</span> diff <span class="hljs-operator">=</span> nums[fast]<span class="hljs-operator">-</span>nums[slow]<br>            <span class="hljs-keyword">while</span> fast <span class="hljs-operator">!=</span> length <span class="hljs-operator">-</span> <span class="hljs-number">1</span> &#123;<br>                <span class="hljs-keyword">if</span>  diff <span class="hljs-operator">==</span> nums[fast<span class="hljs-operator">+</span><span class="hljs-number">1</span>] <span class="hljs-operator">-</span> nums[fast] &#123;<br>                    count <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>                    fast <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>                    <span class="hljs-keyword">continue</span><br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    <span class="hljs-keyword">break</span><br>                &#125;<br>            &#125;<br>            slow <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            fast <span class="hljs-operator">=</span> slow <span class="hljs-operator">+</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> count<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+              <p>遍历一边取出数值放入数组，对数组进行双指针判断</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isPalindrome</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">head</span>: <span class="hljs-type">ListNode</span>?)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">var</span> arr <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>        <span class="hljs-keyword">var</span> p <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">while</span> p <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> &#123;<br>            arr.append(p<span class="hljs-operator">?</span>.val <span class="hljs-operator">??</span> <span class="hljs-number">0</span>)<br>            p <span class="hljs-operator">=</span> p<span class="hljs-operator">?</span>.next<br>        &#125;<br>        p <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> (<span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> arr.count).reversed() &#123;<br>            <span class="hljs-keyword">if</span> p<span class="hljs-operator">?</span>.val <span class="hljs-operator">!=</span> arr[i] &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>            &#125;<br>            p <span class="hljs-operator">=</span> p<span class="hljs-operator">?</span>.next<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>    &#125;<br>&#125;<br><br>通过翻转链表的一半，再从头开始比对<br>```swift<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isPalindrome</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">head</span>: <span class="hljs-type">ListNode</span>?)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> head <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span> <span class="hljs-operator">||</span> head<span class="hljs-operator">?</span>.next <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">var</span> slow <span class="hljs-operator">=</span> head, fast <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">var</span> pre <span class="hljs-operator">=</span> head<br>        <span class="hljs-keyword">var</span> prepre:<span class="hljs-type">ListNode</span>? <span class="hljs-operator">=</span> <span class="hljs-literal">nil</span><br>        <span class="hljs-comment">//当快指针走两步时走完时，慢指针刚好走到中间位置</span><br>        <span class="hljs-keyword">while</span> fast <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> <span class="hljs-operator">&amp;&amp;</span> fast<span class="hljs-operator">?</span>.next <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> &#123;<br>            pre <span class="hljs-operator">=</span> slow<br>            slow <span class="hljs-operator">=</span> slow<span class="hljs-operator">?</span>.next<br>            fast <span class="hljs-operator">=</span> fast<span class="hljs-operator">?</span>.next<span class="hljs-operator">?</span>.next<br>            pre<span class="hljs-operator">?</span>.next <span class="hljs-operator">=</span> prepre<br>            prepre <span class="hljs-operator">=</span> pre<br>        &#125;<br>        <span class="hljs-comment">//判断是否为奇数，奇数个则慢指针向后移动一步</span><br>        <span class="hljs-keyword">if</span> fast <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> &#123;<br>            slow <span class="hljs-operator">=</span> slow<span class="hljs-operator">?</span>.next<br>        &#125;<br>        <span class="hljs-keyword">while</span> pre <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span>  &#123;<br>            <span class="hljs-keyword">if</span> pre<span class="hljs-operator">?</span>.val <span class="hljs-operator">!=</span> slow<span class="hljs-operator">?</span>.val &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>            &#125;<br>            pre <span class="hljs-operator">=</span> pre<span class="hljs-operator">?</span>.next<br>            slow <span class="hljs-operator">=</span> slow<span class="hljs-operator">?</span>.next<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -252,6 +250,8 @@
                     
                       <a class="hover-with-bg" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
                     
+                      <a class="hover-with-bg" href="/tags/%E9%93%BE%E8%A1%A8/">链表</a>
+                    
                       <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
                     
                   </div>
@@ -269,18 +269,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/13/leetcode/palindrome-linked-list/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">234. 回文链表</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/08/leetcode/n-th-tribonacci/">
-                        <span class="hidden-mobile">1137. 第 N 个泰波那契数</span>
+                      <a href="/2021/08/10/leetcode/413arithmetic-slice/">
+                        <span class="hidden-mobile">413. 等差数列划分</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
