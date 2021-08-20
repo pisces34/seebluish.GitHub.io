@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>167. 两数之和 II - 输入有序数组</title>
+    <link href="/2021/08/20/leetcode/167/"/>
+    <url>/2021/08/20/leetcode/167/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/">https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/</a></p><p>太巧了，两种方法都是24ms</p><h1 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h1><p>1 一开始字典为空，存入数组中的元素作为key，下标作为value，<br>2 搜索target与数组[i]所指元素之间的差值，<br>3 差值对应的value即对应数组中的下标。<br>4 返回时应先将字典返回的value 放在前面，因为它在数组中先被访问到并存入字典，而搜索时的[i]元素排在value之后 </p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">twoSum</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">numbers</span>: [<span class="hljs-type">Int</span>], <span class="hljs-keyword">_</span> <span class="hljs-params">target</span>: <span class="hljs-type">Int</span>)</span> -&gt; [<span class="hljs-type">Int</span>] &#123;<br>        <span class="hljs-keyword">var</span> dict <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>: <span class="hljs-type">Int</span>]()<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> numbers.count &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> j <span class="hljs-operator">=</span> dict[target <span class="hljs-operator">-</span> numbers[i]]&#123;<br>                <span class="hljs-keyword">return</span> [j<span class="hljs-operator">+</span><span class="hljs-number">1</span>, i<span class="hljs-operator">+</span><span class="hljs-number">1</span>]<br>            &#125;<br>            dict[numbers[i]] <span class="hljs-operator">=</span> i<br>        &#125;<br>        <span class="hljs-keyword">return</span> []<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h1 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h1><p>当sum &gt; target 时说明应该使较大值变小，才会更靠近target，所以high - 1，反之增加左值。</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">twoSum</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">numbers</span>: [<span class="hljs-type">Int</span>], <span class="hljs-keyword">_</span> <span class="hljs-params">target</span>: <span class="hljs-type">Int</span>)</span> -&gt; [<span class="hljs-type">Int</span>] &#123;<br>        <span class="hljs-keyword">var</span> low <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, high <span class="hljs-operator">=</span> numbers.count <span class="hljs-operator">-</span> <span class="hljs-number">1</span> , sum <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> low <span class="hljs-operator">&lt;</span> high &#123;<br>            sum <span class="hljs-operator">=</span> numbers[low] <span class="hljs-operator">+</span> numbers[high]<br>            <span class="hljs-keyword">if</span> sum <span class="hljs-operator">==</span> target &#123;<br>                <span class="hljs-keyword">return</span> [low<span class="hljs-operator">+</span><span class="hljs-number">1</span>, high<span class="hljs-operator">+</span><span class="hljs-number">1</span>]<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> sum <span class="hljs-operator">&gt;</span> target &#123;<br>                high <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                low <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> []<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>541. 反转字符串 II</title>
     <link href="/2021/08/20/leetcode/541/"/>
     <url>/2021/08/20/leetcode/541/</url>
