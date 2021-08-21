@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>344. 反转字符串 - Pisces34</title>
+  <title>443. 压缩字符串 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="344. 反转字符串">
+            <span class="h2" id="subtitle" title="443. 压缩字符串">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-15 22:58" pubdate>
-        2021年6月15日 晚上
+      <time datetime="2021-08-21 16:43" pubdate>
+        2021年8月21日 下午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      177 字
+      508 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      7
        分钟
     </span>
   
@@ -227,14 +227,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">344. 反转字符串</h1>
+            <h1 style="display: none">443. 压缩字符串</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-string/">https://leetcode-cn.com/problems/reverse-string/</a><br>执行用时：12 ms, 在所有 C++ 提交中击败了99.55% 的用户<br>内存消耗：22.7 MB, 在所有 C++ 提交中击败了5.09% 的用户</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverseString</span><span class="hljs-params">(vector&lt;<span class="hljs-keyword">char</span>&gt;&amp; s)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>, right = s.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">char</span> t;<br>        <span class="hljs-keyword">while</span> (left&lt;right)&#123;<br>            t=s[left];<br>            s[left] = s[right];<br>            s[right]=t;<br>            left++;<br>            right--;<br>        &#125;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/string-compression/">https://leetcode-cn.com/problems/string-compression/</a></p>
+<p>执行用时：28 ms, 在所有 Swift 提交中击败了94.44% 的用户<br>内存消耗：13.7 MB, 在所有 Swift 提交中击败了100.00% 的用户</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>开辟一个字符串来保存字符和个数，最后再转换为字符数组。 28ms</p>
+<ol>
+<li>慢指针指向要压缩的字符</li>
+<li>移动快指针，遇到相同字符即计数，若快指针已经走到末尾，将该字符和计数一起转为字符串存入str</li>
+<li>若遇到不相同字符，判断当前字符个数</li>
+</ol>
+<ul>
+<li>如果是一个，说明下一个是新字符，当前字符转为字符串存入str</li>
+<li>否则将该字符和计数一起转为字符串后存入str</li>
+<li>使慢指针指向快指针位置，此时慢指针所指字符为下一轮匹配字符</li>
+<li>重置计数</li>
+</ul>
+<ol start="4">
+<li>快指针向后移动</li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">compress</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">chars</span>: <span class="hljs-keyword">inout</span> [<span class="hljs-type">Character</span>])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> ch: <span class="hljs-type">Character</span>, count <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, slow <span class="hljs-operator">=</span> <span class="hljs-number">0</span>,fast <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">var</span> n <span class="hljs-operator">=</span> chars.count<br>        <span class="hljs-keyword">var</span> str: <span class="hljs-type">String</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span><br>        <span class="hljs-keyword">while</span> slow <span class="hljs-operator">!=</span> n &#123;<br>            ch <span class="hljs-operator">=</span> chars[slow]<br>            <span class="hljs-keyword">if</span> fast <span class="hljs-operator">&lt;</span> n <span class="hljs-operator">&amp;&amp;</span> ch <span class="hljs-operator">==</span> chars[fast]&#123;<br>                count <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>                <span class="hljs-keyword">if</span> fast <span class="hljs-operator">+</span> <span class="hljs-number">1</span> <span class="hljs-operator">==</span> n  &#123;<br>                    str <span class="hljs-operator">+=</span> <span class="hljs-type">String</span>(ch) <span class="hljs-operator">+</span> <span class="hljs-type">String</span>(count)<br>                    <span class="hljs-keyword">break</span><br>                &#125;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> count <span class="hljs-operator">!=</span> <span class="hljs-number">1</span>&#123;<br>                    str <span class="hljs-operator">+=</span> <span class="hljs-type">String</span>(ch) <span class="hljs-operator">+</span> <span class="hljs-type">String</span>(count)<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    str <span class="hljs-operator">+=</span> <span class="hljs-type">String</span>(ch)<br>                &#125;<br>                slow <span class="hljs-operator">=</span> fast<br>                count <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>            &#125;<br>            fast <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>        &#125;<br>        chars <span class="hljs-operator">=</span> <span class="hljs-type">Array</span>(str)<br>        <span class="hljs-keyword">return</span> chars.count<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<p>执行用时：1 ms, 在所有 Java 提交中击败了100.00% 的用户<br>内存消耗：45.1 MB, 在所有 Java 提交中击败了58.14% 的用户</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reverseString</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] s)</span> </span>&#123;<br>           <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>, right = s.length-<span class="hljs-number">1</span>;<br>           <span class="hljs-keyword">char</span> t;<br>           <span class="hljs-keyword">while</span> (left &lt; right)&#123;<br>               t = s[left];<br>               s[left] = s[right];<br>               s[right] = t;<br>               left++;<br>               right--;<br>           &#125;<br>       &#125;<br>   &#125;<br></code></pre></td></tr></table></figure>
+<p>原地赋值, 20ms</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">compress</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">chars</span>: <span class="hljs-keyword">inout</span> [<span class="hljs-type">Character</span>])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> slow <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, nextCh <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">let</span> n <span class="hljs-operator">=</span> chars.count<br>        <span class="hljs-keyword">for</span> read <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>            <span class="hljs-comment">//判断是否走到末尾 或者 前后字符不相同时计算个数</span><br>            <span class="hljs-keyword">if</span> read <span class="hljs-operator">+</span> <span class="hljs-number">1</span> <span class="hljs-operator">==</span> n <span class="hljs-operator">||</span> chars[read] <span class="hljs-operator">!=</span> chars[read<span class="hljs-operator">+</span><span class="hljs-number">1</span>] &#123;<br>                <span class="hljs-comment">//将比较中的字符赋给慢指针所处字符</span><br>                chars[slow] <span class="hljs-operator">=</span> chars[nextCh]<br>                <span class="hljs-comment">//慢指针向后移动，该位置开始存放计数值</span><br>                slow <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>                <span class="hljs-comment">// 字符只有一个时无需计数, read 和 nextCh重合</span><br>                <span class="hljs-keyword">if</span> read <span class="hljs-operator">&gt;</span> nextCh &#123;<br>                    <span class="hljs-comment">//计算相同字符长度，并赋值</span><br>                    <span class="hljs-keyword">for</span> ch <span class="hljs-keyword">in</span> <span class="hljs-type">Array</span>(<span class="hljs-type">String</span>(read <span class="hljs-operator">-</span> nextCh <span class="hljs-operator">+</span> <span class="hljs-number">1</span>)) &#123;<br>                        chars[slow] <span class="hljs-operator">=</span> ch<br>                        slow <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>                    &#125;<br>                &#125;<br>                <span class="hljs-comment">//指向下一个需要比较的字符</span><br>                nextCh <span class="hljs-operator">=</span> read <span class="hljs-operator">+</span> <span class="hljs-number">1</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> slow<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -251,11 +267,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/C/">C++</a>
-                    
                       <a class="hover-with-bg" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
                     
-                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                      <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
                     
                   </div>
                 
@@ -272,18 +286,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/06/16/leetcode/ArrayPartition/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">561. 数组拆分 I</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/06/14/leetcode/containDuplicate/">
-                        <span class="hidden-mobile">219. 存在重复元素 II</span>
+                      <a href="/2021/08/20/leetcode/167/">
+                        <span class="hidden-mobile">167. 两数之和 II - 输入有序数组</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

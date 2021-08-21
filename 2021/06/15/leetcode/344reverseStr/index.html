@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>219. 存在重复元素 II - Pisces34</title>
+  <title>344. 反转字符串 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="219. 存在重复元素 II">
+            <span class="h2" id="subtitle" title="344. 反转字符串">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-14 19:26" pubdate>
-        2021年6月14日 晚上
+      <time datetime="2021-06-15 22:58" pubdate>
+        2021年6月15日 晚上
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      261 字
+      262 字
     </span>
   
 
@@ -227,14 +227,17 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">219. 存在重复元素 II</h1>
+            <h1 style="display: none">344. 反转字符串</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contains-duplicate-ii/">https://leetcode-cn.com/problems/contains-duplicate-ii/</a><br>执行用时：28 ms, 在所有 C++ 提交中击败了86.81% 的用户<br>内存消耗：15.9 MB, 在所有 C++ 提交中击败了72.51% 的用户</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">containsNearbyDuplicate</span><span class="hljs-params">(vector&lt;<span class="hljs-keyword">int</span>&gt; &amp;nums, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>        unordered_set&lt;<span class="hljs-keyword">int</span>&gt; s;<br>        <span class="hljs-keyword">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">int</span> cur = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            cur = nums[i];<br>            <span class="hljs-keyword">if</span> (s.<span class="hljs-built_in">find</span>(cur) == s.<span class="hljs-built_in">end</span>()) &#123;<br>                s.<span class="hljs-built_in">insert</span>(cur);<br>                <span class="hljs-keyword">if</span> (s.<span class="hljs-built_in">size</span>() &gt; k) &#123; <span class="hljs-comment">//一旦超过k的长度就去掉前面k距离前的值</span><br>                    s.<span class="hljs-built_in">erase</span>(nums[i - k]);<br>                &#125;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<span class="hljs-comment">//再次找到nums[i]说明小于距离k</span><br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reverse-string/">https://leetcode-cn.com/problems/reverse-string/</a><br>执行用时：12 ms, 在所有 C++ 提交中击败了99.55% 的用户<br>内存消耗：22.7 MB, 在所有 C++ 提交中击败了5.09% 的用户</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reverseString</span><span class="hljs-params">(vector&lt;<span class="hljs-keyword">char</span>&gt;&amp; s)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>, right = s.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">char</span> t;<br>        <span class="hljs-keyword">while</span> (left&lt;right)&#123;<br>            t=s[left];<br>            s[left] = s[right];<br>            s[right]=t;<br>            left++;<br>            right--;<br>        &#125;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<p>执行用时：10 ms, 在所有 Java 提交中击败了58.33% 的用户<br>内存消耗：41.7 MB, 在所有 Java 提交中击败了68.78% 的用户</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">containsNearbyDuplicate</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>        Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (set.contains(nums[i])) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>            &#125;<br>            set.add(nums[i]);<br>            <span class="hljs-keyword">if</span> (set.size() &gt; k) &#123;<br>                set.remove(nums[i - k]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>执行用时：1 ms, 在所有 Java 提交中击败了100.00% 的用户<br>内存消耗：45.1 MB, 在所有 Java 提交中击败了58.14% 的用户</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reverseString</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] s)</span> </span>&#123;<br>           <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>, right = s.length-<span class="hljs-number">1</span>;<br>           <span class="hljs-keyword">char</span> t;<br>           <span class="hljs-keyword">while</span> (left &lt; right)&#123;<br>               t = s[left];<br>               s[left] = s[right];<br>               s[right] = t;<br>               left++;<br>               right--;<br>           &#125;<br>       &#125;<br>   &#125;<br></code></pre></td></tr></table></figure>
+
+<p>执行用时：156 ms, 在所有 Swift 提交中击败了98.87% 的用户<br>内存消耗：18.1 MB, 在所有 Swift 提交中击败了27.44% 的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reverseString</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">s</span>: <span class="hljs-keyword">inout</span> [<span class="hljs-type">Character</span>])</span> &#123;<br>        <span class="hljs-keyword">var</span> left <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, right <span class="hljs-operator">=</span> s.count <span class="hljs-operator">-</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">var</span> t : <span class="hljs-type">Character</span><br>        <span class="hljs-keyword">while</span> left <span class="hljs-operator">&lt;</span> right &#123;<br>            t <span class="hljs-operator">=</span> s[left]<br>            s[left] <span class="hljs-operator">=</span> s[right]<br>            s[right] <span class="hljs-operator">=</span> t<br>            left <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            right <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -253,7 +256,7 @@
                     
                       <a class="hover-with-bg" href="/tags/C/">C++</a>
                     
-                      <a class="hover-with-bg" href="/tags/set/">set</a>
+                      <a class="hover-with-bg" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
                     
                       <a class="hover-with-bg" href="/tags/Java/">Java</a>
                     
@@ -272,9 +275,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/06/15/leetcode/344reverseStr/">
+                      <a href="/2021/06/16/leetcode/ArrayPartition/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">344. 反转字符串</span>
+                        <span class="hidden-mobile">561. 数组拆分 I</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -282,8 +285,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/06/12/leetcode/kmp/">
-                        <span class="hidden-mobile">28. 实现 strStr()</span>
+                      <a href="/2021/06/14/leetcode/containDuplicate/">
+                        <span class="hidden-mobile">219. 存在重复元素 II</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
