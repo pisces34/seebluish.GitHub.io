@@ -338,13 +338,6 @@
   </url>
   
   <url>
-    <loc>https://pisces34.github.io/2021/05/09/Learn/%E5%8C%85%E8%A3%85%E7%B1%BB/</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://pisces34.github.io/2021/06/10/leetcode/revers1/</loc>
     
     <lastmod>2021-06-10</lastmod>
@@ -418,13 +411,6 @@
     <loc>https://pisces34.github.io/2021/05/12/leetcode/findArrayIndexC/</loc>
     
     <lastmod>2021-05-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://pisces34.github.io/2021/05/11/block/getBalance/</loc>
-    
-    <lastmod>2021-05-11</lastmod>
     
   </url>
   
@@ -572,27 +558,6 @@
   
   <url>
     <loc>https://pisces34.github.io/tags/java/</loc>
-    <lastmod>2021-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://pisces34.github.io/tags/ETH/</loc>
-    <lastmod>2021-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://pisces34.github.io/tags/JavaScript/</loc>
-    <lastmod>2021-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://pisces34.github.io/tags/web3/</loc>
     <lastmod>2021-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -788,20 +753,6 @@
   </url>
   
 
-  
-  <url>
-    <loc>https://pisces34.github.io/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2021-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://pisces34.github.io/categories/interesting/</loc>
-    <lastmod>2021-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
   <url>
     <loc>https://pisces34.github.io/categories/pat%E7%94%B2%E7%BA%A7/</loc>
