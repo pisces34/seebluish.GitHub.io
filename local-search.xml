@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>695. 岛屿的最大面积</title>
+    <link href="/2021/08/26/leetcode/695/"/>
+    <url>/2021/08/26/leetcode/695/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/max-area-of-island/">https://leetcode-cn.com/problems/max-area-of-island/</a></p><p>执行用时：68 ms, 在所有 Swift 提交中击败了100.00% 的用户<br>内存消耗：14.8 MB, 在所有 Swift 提交中击败了36.00% 的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">maxAreaOfIsland</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">grid</span>: [[<span class="hljs-type">Int</span>]])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> grid <span class="hljs-operator">=</span> grid<br>        <span class="hljs-keyword">var</span> row <span class="hljs-operator">=</span> grid.count<br>        <span class="hljs-keyword">var</span> column <span class="hljs-operator">=</span> grid[<span class="hljs-number">0</span>].count<br>        <span class="hljs-keyword">var</span> ans <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">dfs</span>( <span class="hljs-keyword">_</span> <span class="hljs-params">i</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">j</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>            <span class="hljs-comment">//越界判断</span><br>            <span class="hljs-keyword">if</span> i <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span> <span class="hljs-operator">||</span> j <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span> <span class="hljs-operator">||</span> i <span class="hljs-operator">&gt;=</span> row <span class="hljs-operator">||</span> j <span class="hljs-operator">&gt;=</span> column &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            &#125;<br>            <span class="hljs-keyword">if</span> grid[i][j] <span class="hljs-operator">==</span> <span class="hljs-number">0</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            &#125;<br>            <span class="hljs-comment">//找到1就置为0，沉没岛屿</span><br>            grid[i][j] <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>            <span class="hljs-keyword">var</span> num <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>            <span class="hljs-comment">//四个方向深搜</span><br>            num <span class="hljs-operator">+=</span> dfs(i<span class="hljs-operator">-</span><span class="hljs-number">1</span>, j)<br>            num <span class="hljs-operator">+=</span> dfs(i<span class="hljs-operator">+</span><span class="hljs-number">1</span>, j)<br>            num <span class="hljs-operator">+=</span> dfs(i, j<span class="hljs-operator">-</span><span class="hljs-number">1</span>)<br>            num <span class="hljs-operator">+=</span> dfs(i, j<span class="hljs-operator">+</span><span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">return</span> num<br>        &#125;<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> row &#123;<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> column &#123;<br>                ans <span class="hljs-operator">=</span> <span class="hljs-built_in">max</span>(ans, dfs(i,j))<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+      <tag>DFS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>567. 字符串的排列</title>
     <link href="/2021/08/26/leetcode/567/"/>
     <url>/2021/08/26/leetcode/567/</url>

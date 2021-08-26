@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>567. 字符串的排列 - Pisces34</title>
+  <title>695. 岛屿的最大面积 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="567. 字符串的排列">
+            <span class="h2" id="subtitle" title="695. 岛屿的最大面积">
               
             </span>
 
@@ -175,7 +175,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-26 21:18" pubdate>
+      <time datetime="2021-08-26 21:40" pubdate>
         2021年8月26日 晚上
       </time>
     </span>
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      213 字
+      195 字
     </span>
   
 
@@ -227,11 +227,12 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">567. 字符串的排列</h1>
+            <h1 style="display: none">695. 岛屿的最大面积</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutation-in-string/">https://leetcode-cn.com/problems/permutation-in-string/</a><br>执行用时：44 ms, 在所有 Swift 提交中击败了84.00%的用户<br>内存消耗：14.2 MB, 在所有 Swift 提交中击败了38.00%的用户</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">checkInclusion</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">s1</span>: <span class="hljs-type">String</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">s2</span>: <span class="hljs-type">String</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> s1.count <span class="hljs-operator">&gt;</span> s2.count &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>        &#125;<br>        <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-type">Array</span>(s1), b <span class="hljs-operator">=</span> <span class="hljs-type">Array</span>(s2), m <span class="hljs-operator">=</span> s1.count, n <span class="hljs-operator">=</span> s2.count<br>        <span class="hljs-keyword">var</span> count1 <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>](repeating: <span class="hljs-number">0</span>, count: <span class="hljs-number">26</span>)<br>        <span class="hljs-keyword">var</span> count2 <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>](repeating: <span class="hljs-number">0</span>, count: <span class="hljs-number">26</span>)<br>        <span class="hljs-comment">//比较短字符串长度下是否是对应排列的子串，检查元素</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> m &#123;<br>            count1[<span class="hljs-type">Int</span>(a[i].asciiValue<span class="hljs-operator">!</span>) <span class="hljs-operator">-</span> <span class="hljs-number">97</span>] <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            count2[<span class="hljs-type">Int</span>(b[i].asciiValue<span class="hljs-operator">!</span>) <span class="hljs-operator">-</span> <span class="hljs-number">97</span>] <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">if</span> count1.elementsEqual(count2) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> m <span class="hljs-operator">..&lt;</span> n &#123;<br>            <span class="hljs-comment">//滑动窗口向后移动，去掉滑动窗口前一个元素</span><br>            count2[<span class="hljs-type">Int</span>(b[i].asciiValue<span class="hljs-operator">!</span>) <span class="hljs-operator">-</span> <span class="hljs-number">97</span>] <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            count2[<span class="hljs-type">Int</span>(b[i<span class="hljs-operator">-</span>m].asciiValue<span class="hljs-operator">!</span>) <span class="hljs-operator">-</span> <span class="hljs-number">97</span>] <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>            <span class="hljs-keyword">if</span> count1.elementsEqual(count2) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/max-area-of-island/">https://leetcode-cn.com/problems/max-area-of-island/</a></p>
+<p>执行用时：68 ms, 在所有 Swift 提交中击败了100.00% 的用户<br>内存消耗：14.8 MB, 在所有 Swift 提交中击败了36.00% 的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">maxAreaOfIsland</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">grid</span>: [[<span class="hljs-type">Int</span>]])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> grid <span class="hljs-operator">=</span> grid<br>        <span class="hljs-keyword">var</span> row <span class="hljs-operator">=</span> grid.count<br>        <span class="hljs-keyword">var</span> column <span class="hljs-operator">=</span> grid[<span class="hljs-number">0</span>].count<br>        <span class="hljs-keyword">var</span> ans <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">dfs</span>( <span class="hljs-keyword">_</span> <span class="hljs-params">i</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">j</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>            <span class="hljs-comment">//越界判断</span><br>            <span class="hljs-keyword">if</span> i <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span> <span class="hljs-operator">||</span> j <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span> <span class="hljs-operator">||</span> i <span class="hljs-operator">&gt;=</span> row <span class="hljs-operator">||</span> j <span class="hljs-operator">&gt;=</span> column &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            &#125;<br>            <span class="hljs-keyword">if</span> grid[i][j] <span class="hljs-operator">==</span> <span class="hljs-number">0</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>            &#125;<br>            <span class="hljs-comment">//找到1就置为0，沉没岛屿</span><br>            grid[i][j] <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>            <span class="hljs-keyword">var</span> num <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>            <span class="hljs-comment">//四个方向深搜</span><br>            num <span class="hljs-operator">+=</span> dfs(i<span class="hljs-operator">-</span><span class="hljs-number">1</span>, j)<br>            num <span class="hljs-operator">+=</span> dfs(i<span class="hljs-operator">+</span><span class="hljs-number">1</span>, j)<br>            num <span class="hljs-operator">+=</span> dfs(i, j<span class="hljs-operator">-</span><span class="hljs-number">1</span>)<br>            num <span class="hljs-operator">+=</span> dfs(i, j<span class="hljs-operator">+</span><span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">return</span> num<br>        &#125;<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> row &#123;<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> column &#123;<br>                ans <span class="hljs-operator">=</span> <span class="hljs-built_in">max</span>(ans, dfs(i,j))<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -248,11 +249,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
-                    
                       <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">滑动窗口</a>
+                      <a class="hover-with-bg" href="/tags/DFS/">DFS</a>
                     
                   </div>
                 
@@ -269,18 +268,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/26/leetcode/695/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">695. 岛屿的最大面积</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/24/leetcode/787/">
-                        <span class="hidden-mobile">787. K 站中转内最便宜的航班</span>
+                      <a href="/2021/08/26/leetcode/567/">
+                        <span class="hidden-mobile">567. 字符串的排列</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
