@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>226. 翻转二叉树</title>
+    <link href="/2021/08/27/leetcode/226/"/>
+    <url>/2021/08/27/leetcode/226/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/invert-binary-tree/">https://leetcode-cn.com/problems/invert-binary-tree/</a></p><p>执行用时：4 ms, 在所有 C++ 提交中击败了57.66%的用户<br>内存消耗：9.3 MB, 在所有 C++ 提交中击败了94.12%的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">TreeNode* <span class="hljs-title">invertTree</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span> root;<br>            TreeNode *tmp;<br>            tmp = root-&gt;left;<br>            root-&gt;left = root-&gt;right;<br>            root-&gt;right = tmp;<br>            <span class="hljs-built_in">invertTree</span>(root-&gt;left);<br>            <span class="hljs-built_in">invertTree</span>(root-&gt;right);<br>        <span class="hljs-keyword">return</span> root;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>二叉树</tag>
+      
+      <tag>递归</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>53. 最大子序和</title>
     <link href="/2021/08/27/leetcode/53/"/>
     <url>/2021/08/27/leetcode/53/</url>
@@ -23,6 +52,8 @@
       <tag>C++</tag>
       
       <tag>贪心算法</tag>
+      
+      <tag>动态规划</tag>
       
     </tags>
     
