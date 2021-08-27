@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>20. 有效的括号</title>
+    <link href="/2021/08/27/leetcode/20/"/>
+    <url>/2021/08/27/leetcode/20/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/valid-parentheses/">https://leetcode-cn.com/problems/valid-parentheses/</a></p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>用栈存入的时候判断ascii码差值，决定是否pop前一个符号。<br>耗时0ms</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isValid</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (s.<span class="hljs-built_in">length</span>()%<span class="hljs-number">2</span> == <span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        stack&lt;<span class="hljs-keyword">char</span>&gt; st;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">length</span>(); ++i) &#123;<br>            <span class="hljs-comment">//一开始为空，压入一个符号后，要比较的是下一个符号</span><br>            <span class="hljs-keyword">if</span> (st.<span class="hljs-built_in">empty</span>())&#123;<br>                st.<span class="hljs-built_in">push</span>(s[i]);<br>                i++;<br>            &#125;<br>            <span class="hljs-keyword">char</span> t = st.<span class="hljs-built_in">top</span>();<br>            <span class="hljs-keyword">if</span> (s[i] - t == <span class="hljs-number">1</span> || s[i] - t == <span class="hljs-number">2</span>)&#123;<br>                st.<span class="hljs-built_in">pop</span>();<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                st.<span class="hljs-built_in">push</span>(s[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> st.<span class="hljs-built_in">empty</span>();<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>Stack</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>695. 岛屿的最大面积</title>
     <link href="/2021/08/26/leetcode/695/"/>
     <url>/2021/08/26/leetcode/695/</url>
