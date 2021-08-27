@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>14.最长公共前缀</title>
+    <link href="/2021/08/27/leetcode/14LongestCommonPrefix/"/>
+    <url>/2021/08/27/leetcode/14LongestCommonPrefix/</url>
+    
+    <content type="html"><![CDATA[<p>链接：<a href="https://leetcode-cn.com/problems/longest-common-prefix/">https://leetcode-cn.com/problems/longest-common-prefix/</a></p><p>执行用时：4 ms, 在所有 C++ 提交中击败了85.15%的用户<br>内存消耗：8.9 MB, 在所有 C++ 提交中击败了60.86%的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">longestCommonPrefix</span><span class="hljs-params">(vector&lt;string&gt;&amp; strs)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (strs[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>() == <span class="hljs-number">0</span>) &#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>; &#125;<br>        <span class="hljs-keyword">if</span>(strs.<span class="hljs-built_in">size</span>()==<span class="hljs-number">1</span>)&#123;<span class="hljs-keyword">return</span> strs[<span class="hljs-number">0</span>];&#125;<br>        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;<br>        string res = <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-comment">//纵向扫描</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; strs[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            <span class="hljs-keyword">char</span> common = strs[<span class="hljs-number">0</span>][j];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>; k &lt; strs.<span class="hljs-built_in">size</span>(); ++k) &#123;<br>                <span class="hljs-keyword">if</span> (common == strs[k][j]) &#123;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    <span class="hljs-keyword">return</span> res;<br>                &#125;<br>            &#125;<br>            j++;<br>            res += common;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p>执行用时：4 ms, 在所有 C++ 提交中击败了89.08% 的用户<br>内存消耗：8.7 MB, 在所有 C++ 提交中击败了96.19% 的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">longestCommonPrefix</span><span class="hljs-params">(vector&lt;string&gt; &amp;strs)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> n=strs.<span class="hljs-built_in">size</span>();<br>        string sub = <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">if</span> (strs[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>() == <span class="hljs-number">0</span>) &#123; <span class="hljs-keyword">return</span> sub; &#125;<br>        <span class="hljs-keyword">if</span>(n&gt;<span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">while</span> (strs[<span class="hljs-number">0</span>][j] == strs[i][j] &amp;&amp; (strs[i][j] != <span class="hljs-string">&#x27;\0&#x27;</span>)) &#123;<br>                <span class="hljs-keyword">if</span> (i == n- <span class="hljs-number">1</span>) &#123;<br>                    sub += strs[<span class="hljs-number">0</span>][j];<br>                    j++;<br>                    i = <span class="hljs-number">1</span>;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<br>                i++;<br>            &#125;<br>            <span class="hljs-keyword">return</span> sub;<br>        &#125;<br>        <span class="hljs-keyword">return</span> strs[<span class="hljs-number">0</span>];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>字符串</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>20. 有效的括号</title>
     <link href="/2021/08/27/leetcode/20/"/>
     <url>/2021/08/27/leetcode/20/</url>
@@ -1488,35 +1515,6 @@
       <tag>回文字符串</tag>
       
       <tag>字符串</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>14.最长公共前缀</title>
-    <link href="/2021/06/08/leetcode/Longest%20Common%20Prefix/"/>
-    <url>/2021/06/08/leetcode/Longest%20Common%20Prefix/</url>
-    
-    <content type="html"><![CDATA[<p>链接：<a href="https://leetcode-cn.com/problems/longest-common-prefix/">https://leetcode-cn.com/problems/longest-common-prefix/</a></p><p>执行用时：4 ms, 在所有 C++ 提交中击败了89.08% 的用户<br>内存消耗：8.7 MB, 在所有 C++ 提交中击败了96.19% 的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">longestCommonPrefix</span><span class="hljs-params">(vector&lt;string&gt; &amp;strs)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> n=strs.<span class="hljs-built_in">size</span>();<br>        string sub = <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">if</span> (strs[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>() == <span class="hljs-number">0</span>) &#123; <span class="hljs-keyword">return</span> sub; &#125;<br>        <span class="hljs-keyword">if</span>(n&gt;<span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">while</span> (strs[<span class="hljs-number">0</span>][j] == strs[i][j] &amp;&amp; (strs[i][j] != <span class="hljs-string">&#x27;\0&#x27;</span>)) &#123;<br>                <span class="hljs-keyword">if</span> (i == n- <span class="hljs-number">1</span>) &#123;<br>                    sub += strs[<span class="hljs-number">0</span>][j];<br>                    j++;<br>                    i = <span class="hljs-number">1</span>;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<br>                i++;<br>            &#125;<br>            <span class="hljs-keyword">return</span> sub;<br>        &#125;<br>        <span class="hljs-keyword">return</span> strs[<span class="hljs-number">0</span>];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>leetcode算法题</category>
-      
-      <category>[object Object]</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>C++</tag>
-      
-      <tag>数组</tag>
       
     </tags>
     
