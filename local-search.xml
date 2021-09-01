@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>165. 比较版本号</title>
+    <link href="/2021/09/01/leetcode/165/"/>
+    <url>/2021/09/01/leetcode/165/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/compare-version-numbers/">https://leetcode-cn.com/problems/compare-version-numbers/</a></p><p>执行用时：0 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：14 MB, 在所有 Swift 提交中击败了58.06%的用户</p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>转换为数组后先判断一样长的部分，如果都相等，再比较多出来的那一部分是否含有不为0的数。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">compareVersion</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">version1</span>: <span class="hljs-type">String</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">version2</span>: <span class="hljs-type">String</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> v1 <span class="hljs-operator">=</span> version1.split(separator: <span class="hljs-string">&quot;.&quot;</span>)<br>        <span class="hljs-keyword">var</span> v2 <span class="hljs-operator">=</span> version2.split(separator: <span class="hljs-string">&quot;.&quot;</span>)<br>        <span class="hljs-keyword">var</span> index1 <span class="hljs-operator">=</span> v1.count, index2 <span class="hljs-operator">=</span> v2.count<br>        <span class="hljs-keyword">let</span> len <span class="hljs-operator">=</span> <span class="hljs-built_in">min</span>(index1, index2)<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> len &#123;<br>            <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-type">Int</span>(v1[i])<span class="hljs-operator">!</span><br>            <span class="hljs-keyword">let</span> b <span class="hljs-operator">=</span> <span class="hljs-type">Int</span>(v2[i])<span class="hljs-operator">!</span><br>            <span class="hljs-keyword">if</span> a <span class="hljs-operator">&gt;</span> b &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> a <span class="hljs-operator">&lt;</span> b &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> index1 <span class="hljs-operator">&lt;</span> index2 &#123;<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> index1 <span class="hljs-operator">..&lt;</span> index2 &#123;<br>                <span class="hljs-keyword">let</span> b <span class="hljs-operator">=</span> <span class="hljs-type">Int</span>(v2[i])<span class="hljs-operator">!</span><br>                <span class="hljs-keyword">if</span> b <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span><br>                &#125;<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> index2 <span class="hljs-operator">..&lt;</span> index1 &#123;<br>                <span class="hljs-keyword">let</span> a <span class="hljs-operator">=</span> <span class="hljs-type">Int</span>(v1[i])<span class="hljs-operator">!</span><br>                <span class="hljs-keyword">if</span> a <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>字符串</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>226. 翻转二叉树</title>
     <link href="/2021/08/27/leetcode/226/"/>
     <url>/2021/08/27/leetcode/226/</url>
