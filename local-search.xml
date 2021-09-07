@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>1221. 分割平衡字符串</title>
+    <link href="/2021/09/07/leetcode/1221/"/>
+    <url>/2021/09/07/leetcode/1221/</url>
+    
+    <content type="html"><![CDATA[<p>执行用时：0 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.7 MB, 在所有 Swift 提交中击败了45.13%的用户</p><p>题目链接：<a href="https://leetcode-cn.com/problems/split-a-string-in-balanced-strings/">https://leetcode-cn.com/problems/split-a-string-in-balanced-strings/</a></p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">balancedStringSplit</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">s</span>: <span class="hljs-type">String</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> arr <span class="hljs-operator">=</span> [<span class="hljs-type">Character</span>](s)<br>        <span class="hljs-keyword">var</span> r <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, res <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">let</span> n <span class="hljs-operator">=</span> s.count<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>            <span class="hljs-keyword">if</span> arr[i] <span class="hljs-operator">==</span> <span class="hljs-string">&quot;R&quot;</span> &#123;<br>                r <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                r <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>            &#125;<br>            <span class="hljs-keyword">if</span> r <span class="hljs-operator">==</span> <span class="hljs-number">0</span> &#123;<br>                res <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>字符串</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>70. 爬楼梯</title>
     <link href="/2021/09/04/leetcode/70/"/>
     <url>/2021/09/04/leetcode/70/</url>
