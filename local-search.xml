@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>1001 A+B Format (20 point(s))</title>
+    <link href="/2021/09/07/patA/1001/"/>
+    <url>/2021/09/07/patA/1001/</url>
+    
+    <content type="html"><![CDATA[<p>===<br>题目链接：<a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805528788582400">https://pintia.cn/problem-sets/994805342720868352/problems/994805528788582400</a><br>===</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> a,b, sum = <span class="hljs-number">0</span>;<br>    cin&gt;&gt;a&gt;&gt;b;<br>    sum = a+b;<br>    string s = <span class="hljs-built_in">to_string</span>(sum);<br>    <span class="hljs-keyword">if</span> (s.<span class="hljs-built_in">size</span>()&lt;<span class="hljs-number">4</span>)&#123;<br>        cout&lt;&lt;sum;<br>    &#125;<span class="hljs-keyword">else</span> &#123;<br>        string res = <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = s.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>; i &gt; <span class="hljs-number">0</span>; --i) &#123;<br>            res += s[i];<br>            count++;<br>            <span class="hljs-keyword">if</span> (count == <span class="hljs-number">3</span>) &#123;<br>                <span class="hljs-keyword">if</span> (s[i<span class="hljs-number">-1</span>] != <span class="hljs-string">&#x27;-&#x27;</span> || (s[i<span class="hljs-number">-1</span>]&gt;=<span class="hljs-string">&#x27;0&#x27;</span>)) res += <span class="hljs-string">&#x27;,&#x27;</span>;<br>                count = <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>        res += s[<span class="hljs-number">0</span>];<br>        std::<span class="hljs-built_in">reverse</span>(res.<span class="hljs-built_in">begin</span>(), res.<span class="hljs-built_in">end</span>());<br>        cout &lt;&lt; res;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>pat甲级</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>C++</tag>
+      
+      <tag>字符串</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>1221. 分割平衡字符串</title>
     <link href="/2021/09/07/leetcode/1221/"/>
     <url>/2021/09/07/leetcode/1221/</url>
