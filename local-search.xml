@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>1894. 找到需要补充粉笔的学生编号</title>
+    <link href="/2021/09/10/leetcode/1894/"/>
+    <url>/2021/09/10/leetcode/1894/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/find-the-student-that-will-replace-the-chalk/">https://leetcode-cn.com/problems/find-the-student-that-will-replace-the-chalk/</a></p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">chalkReplacer</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">chalk</span>: [<span class="hljs-type">Int</span>], <span class="hljs-keyword">_</span> <span class="hljs-params">k</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> who <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, rest <span class="hljs-operator">=</span> k, n <span class="hljs-operator">=</span> chalk.count<br>        <span class="hljs-keyword">if</span> n <span class="hljs-operator">==</span> <span class="hljs-number">1</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>        &#125;<br>        <span class="hljs-keyword">var</span> sum <span class="hljs-operator">=</span> chalk.reduce(<span class="hljs-number">0</span>, <span class="hljs-operator">+</span>)<br>        <span class="hljs-keyword">var</span> k <span class="hljs-operator">=</span> k <span class="hljs-operator">%</span> sum<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>            <span class="hljs-keyword">if</span> chalk[i] <span class="hljs-operator">&gt;</span> k &#123;<br>                who <span class="hljs-operator">=</span> i<br>                <span class="hljs-keyword">break</span><br>            &#125;<br>            k <span class="hljs-operator">-=</span> chalk[i]<br>        &#125;<br>        <span class="hljs-keyword">return</span> who<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>1002 A+B for Polynomials (25 point(s))</title>
     <link href="/2021/09/07/patA/1002/"/>
     <url>/2021/09/07/patA/1002/</url>
