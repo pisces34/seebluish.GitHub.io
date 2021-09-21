@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>88. 合并两个有序数组</title>
+    <link href="/2021/09/21/leetcode/88/"/>
+    <url>/2021/09/21/leetcode/88/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/merge-sorted-array/">https://leetcode-cn.com/problems/merge-sorted-array/</a></p><p>执行用时：8 ms, 在所有 Swift 提交中击败了82.93%的用户<br>内存消耗：13.8 MB, 在所有 Swift 提交中击败了24.52%的用户</p><p>从尾部开始比较大小，插入较大的数</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">merge</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">nums1</span>: <span class="hljs-keyword">inout</span> [<span class="hljs-type">Int</span>], <span class="hljs-keyword">_</span> <span class="hljs-params">m</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">nums2</span>: [<span class="hljs-type">Int</span>], <span class="hljs-keyword">_</span> <span class="hljs-params">n</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>        <span class="hljs-keyword">var</span> i <span class="hljs-operator">=</span> m <span class="hljs-operator">+</span> n <span class="hljs-operator">-</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">var</span> long <span class="hljs-operator">=</span> m <span class="hljs-operator">-</span> <span class="hljs-number">1</span>, short <span class="hljs-operator">=</span> n <span class="hljs-operator">-</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">while</span> short <span class="hljs-operator">&gt;=</span> <span class="hljs-number">0</span> &#123;<br>            <span class="hljs-keyword">while</span> long <span class="hljs-operator">&gt;=</span> <span class="hljs-number">0</span> <span class="hljs-operator">&amp;&amp;</span> nums1[long] <span class="hljs-operator">&gt;</span> nums2[short] &#123;<br>                nums1[i] <span class="hljs-operator">=</span> nums1[long]<br>                i <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>                long <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>            &#125;<br>            nums1[i] <span class="hljs-operator">=</span> nums2[short]<br>            i <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>            short <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>217. 存在重复元素</title>
     <link href="/2021/09/19/leetcode/217/"/>
     <url>/2021/09/19/leetcode/217/</url>
