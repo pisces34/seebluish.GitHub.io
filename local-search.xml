@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>387. 字符串中的第一个唯一字符</title>
+    <link href="/2021/09/26/leetcode/387/"/>
+    <url>/2021/09/26/leetcode/387/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/first-unique-character-in-a-string/">https://leetcode-cn.com/problems/first-unique-character-in-a-string/</a></p><p>执行用时：100 ms, 在所有 Swift 提交中击败了90.08%的用户<br>内存消耗：13.9 MB, 在所有 Swift 提交中击败了90.08%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">firstUniqChar</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">s</span>: <span class="hljs-type">String</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">var</span> table <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>].<span class="hljs-keyword">init</span>(repeating: <span class="hljs-number">0</span>, count: <span class="hljs-number">26</span>)<br>        <span class="hljs-keyword">let</span> chValue <span class="hljs-operator">=</span> <span class="hljs-type">Int</span>(<span class="hljs-string">&quot;a&quot;</span>.unicodeScalars.first<span class="hljs-operator">!</span>.value)<br>        <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> s.unicodeScalars &#123;<br>            table[<span class="hljs-type">Int</span>(c.value) <span class="hljs-operator">-</span> chValue] <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> s.unicodeScalars &#123;<br>            <span class="hljs-keyword">if</span> table[<span class="hljs-type">Int</span>(i.value) <span class="hljs-operator">-</span> chValue] <span class="hljs-operator">==</span> <span class="hljs-number">1</span> &#123;<br>                <span class="hljs-keyword">return</span> res<br>            &#125;<br>            res <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>字符串</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>383. 赎金信</title>
     <link href="/2021/09/26/leetcode/383/"/>
     <url>/2021/09/26/leetcode/383/</url>
