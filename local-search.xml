@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>383. 赎金信</title>
+    <link href="/2021/09/26/leetcode/383/"/>
+    <url>/2021/09/26/leetcode/383/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/ransom-note/">https://leetcode-cn.com/problems/ransom-note/</a><br>执行用时：36 ms, 在所有 Swift 提交中击败了97.22%的用户<br>内存消耗：13.9 MB, 在所有 Swift 提交中击败了86.11%的用户</p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>和242一样的解法</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">canConstruct</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">ransomNote</span>: <span class="hljs-type">String</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">magazine</span>: <span class="hljs-type">String</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> ransomNote.count <span class="hljs-operator">&gt;</span> magazine.count &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>        &#125;<br>        <span class="hljs-keyword">var</span> table <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>].<span class="hljs-keyword">init</span>(repeating: <span class="hljs-number">0</span>, count: <span class="hljs-number">26</span>)<br>        <span class="hljs-keyword">let</span> chValue <span class="hljs-operator">=</span> <span class="hljs-type">Int</span>(<span class="hljs-string">&quot;a&quot;</span>.unicodeScalars.first<span class="hljs-operator">!</span>.value)<br>        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> magazine.unicodeScalars &#123;<br>            table[<span class="hljs-type">Int</span>(item.value) <span class="hljs-operator">-</span> chValue] <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> ransomNote.unicodeScalars &#123;<br>            table[<span class="hljs-type">Int</span>(i.value) <span class="hljs-operator">-</span> chValue] <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">guard</span> table.first(where: &#123;<span class="hljs-variable">$0</span> <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span>&#125;) <span class="hljs-operator">!=</span> <span class="hljs-literal">nil</span> <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>字符串</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>566. 重塑矩阵</title>
+    <link href="/2021/09/26/leetcode/556/"/>
+    <url>/2021/09/26/leetcode/556/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/reshape-the-matrix/">https://leetcode-cn.com/problems/reshape-the-matrix/</a><br>执行用时：76 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.6 MB, 在所有 Swift 提交中击败了97.37%的用户</p><p>1.每次内循环判断新的矩阵宽度是否符合要求</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">matrixReshape</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">mat</span>: [[<span class="hljs-type">Int</span>]], <span class="hljs-keyword">_</span> <span class="hljs-params">r</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">c</span>: <span class="hljs-type">Int</span>)</span> -&gt; [[<span class="hljs-type">Int</span>]] &#123;<br>        <span class="hljs-keyword">let</span> m <span class="hljs-operator">=</span> mat.count, n <span class="hljs-operator">=</span> mat[<span class="hljs-number">0</span>].count<br>        <span class="hljs-keyword">if</span> m<span class="hljs-operator">*</span>n <span class="hljs-operator">!=</span> r<span class="hljs-operator">*</span>c &#123;<br>            <span class="hljs-keyword">return</span> mat<br>        &#125;<br>        <span class="hljs-keyword">var</span> res : [[<span class="hljs-type">Int</span>]] <span class="hljs-operator">=</span> []<br>        <span class="hljs-keyword">var</span> current : [<span class="hljs-type">Int</span>] <span class="hljs-operator">=</span> []<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> m &#123;<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>                current.append(mat[i][j])<br>                <span class="hljs-keyword">if</span> current.count <span class="hljs-operator">==</span> c &#123;<br>                    res.append(current)<br>                    current <span class="hljs-operator">=</span> []<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>2.取出全部再放回</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">matrixReshape</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">mat</span>: [[<span class="hljs-type">Int</span>]], <span class="hljs-keyword">_</span> <span class="hljs-params">r</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">c</span>: <span class="hljs-type">Int</span>)</span> -&gt; [[<span class="hljs-type">Int</span>]] &#123;<br>        <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> [[<span class="hljs-type">Int</span>]].<span class="hljs-keyword">init</span>(repeating: [], count: r)<br>        <span class="hljs-keyword">let</span> m <span class="hljs-operator">=</span> mat.count, n <span class="hljs-operator">=</span> mat[<span class="hljs-number">0</span>].count<br>        <span class="hljs-keyword">if</span> m<span class="hljs-operator">*</span>n <span class="hljs-operator">!=</span> r<span class="hljs-operator">*</span>c &#123;<br>            <span class="hljs-keyword">return</span> mat<br>        &#125;<br>        <span class="hljs-keyword">var</span> warehouse <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> m &#123;<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>                warehouse.append(mat[i][j])<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">var</span> index <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> r &#123;<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> c &#123;<br>                res[i].append(warehouse[index])<br>                index <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>88. 合并两个有序数组</title>
     <link href="/2021/09/21/leetcode/88/"/>
     <url>/2021/09/21/leetcode/88/</url>
