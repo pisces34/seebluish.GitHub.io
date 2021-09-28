@@ -20,9 +20,25 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>分类 - leetcode算法题 - Pisces34</title>
+  <title>232. 用栈实现队列 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -149,9 +165,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="分类 - leetcode算法题">
+            <span class="h2" id="subtitle" title="232. 用栈实现队列">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-28 18:29" pubdate>
+        2021年9月28日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      157 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      2
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -164,100 +217,94 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 85 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/08/04/leetcode/valid-triangle/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">611. 有效三角形的个数</span>
-      <time style="float: right;">08-04</time>
-    </a>
-  
-    
-    <a href="/2021/08/03/leetcode/shortest-unsorted/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">581. 最短无序连续子数组</span>
-      <time style="float: right;">08-03</time>
-    </a>
-  
-    
-    <a href="/2021/08/02/leetcode/743network-delay/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">743. 网络延迟时间</span>
-      <time style="float: right;">08-02</time>
-    </a>
-  
-    
-    <a href="/2021/08/02/leetcode/oddevenlinked/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">328. 奇偶链表</span>
-      <time style="float: right;">08-02</time>
-    </a>
-  
-    
-    <a href="/2021/08/01/leetcode/203/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">203. 移除链表元素</span>
-      <time style="float: right;">08-01</time>
-    </a>
-  
-    
-    <a href="/2021/08/01/leetcode/the-k/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">1337. 矩阵中战斗力最弱的 K 行</span>
-      <time style="float: right;">08-01</time>
-    </a>
-  
-    
-    <a href="/2021/07/31/leetcode/remove-nth-node/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">19. 删除链表的倒数第 N 个结点</span>
-      <time style="float: right;">07-31</time>
-    </a>
-  
-    
-    <a href="/2021/07/31/leetcode/validanagram/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">242. 有效的字母异位词</span>
-      <time style="float: right;">07-31</time>
-    </a>
-  
-    
-    <a href="/2021/07/30/leetcode/intersectionTwo/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">160. 相交链表</span>
-      <time style="float: right;">07-30</time>
-    </a>
-  
-    
-    <a href="/2021/07/29/leetcode/circleLinked2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">142. 环形链表 II</span>
-      <time style="float: right;">07-29</time>
-    </a>
-  
-</div>
 
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/3/#board">3</a><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/6/#board">6</a><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/7/#board">7</a><span class="space">&hellip;</span><a class="page-number" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/9/#board">9</a><a class="extend next" rel="next" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-
-              </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">232. 用栈实现队列</h1>
+            
+            <div class="markdown-body">
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-queue-using-stacks/">https://leetcode-cn.com/problems/implement-queue-using-stacks/</a></p>
+<p>执行用时：4 ms, 在所有 Swift 提交中击败了64.20%的用户<br>内存消耗：14 MB, 在所有 Swift 提交中击败了37.04%的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyQueue</span> </span>&#123;<br>    <span class="hljs-keyword">var</span> inStack:[<span class="hljs-type">Int</span>]<br>    <span class="hljs-keyword">var</span> outStack:[<span class="hljs-type">Int</span>]<br>    <span class="hljs-keyword">var</span> front: <span class="hljs-type">Int</span><br>    <span class="hljs-function"><span class="hljs-keyword">init</span>()</span> &#123;<br>        inStack <span class="hljs-operator">=</span> []<br>        outStack <span class="hljs-operator">=</span> []<br>        front <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">push</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">x</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> inStack.isEmpty &#123;<br>            front <span class="hljs-operator">=</span> x<br>        &#125;<br>        inStack.append(x)<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">pop</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">if</span> outStack.isEmpty  &#123;<br>            <span class="hljs-keyword">while</span> <span class="hljs-operator">!</span>inStack.isEmpty &#123;<br>                outStack.append(inStack.last<span class="hljs-operator">!</span>)<br>                inStack.removeLast()<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">let</span> num <span class="hljs-operator">=</span> outStack.last<span class="hljs-operator">!</span><br>        outStack.removeLast()<br>        <span class="hljs-keyword">return</span> num<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">peek</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">if</span> <span class="hljs-operator">!</span>outStack.isEmpty &#123;<br>            <span class="hljs-keyword">return</span> outStack.last<span class="hljs-operator">!</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> front<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">empty</span>()</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>         <span class="hljs-keyword">if</span> (inStack.isEmpty <span class="hljs-operator">&amp;&amp;</span> outStack.isEmpty)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/">leetcode算法题</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%A0%88/">栈</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%98%9F%E5%88%97/">队列</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/27/leetcode/20/">
+                        <span class="hidden-mobile">20. 有效的括号</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -362,9 +409,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 

@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>232. 用栈实现队列</title>
+    <link href="/2021/09/28/leetcode/232/"/>
+    <url>/2021/09/28/leetcode/232/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/implement-queue-using-stacks/">https://leetcode-cn.com/problems/implement-queue-using-stacks/</a></p><p>执行用时：4 ms, 在所有 Swift 提交中击败了64.20%的用户<br>内存消耗：14 MB, 在所有 Swift 提交中击败了37.04%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyQueue</span> </span>&#123;<br>    <span class="hljs-keyword">var</span> inStack:[<span class="hljs-type">Int</span>]<br>    <span class="hljs-keyword">var</span> outStack:[<span class="hljs-type">Int</span>]<br>    <span class="hljs-keyword">var</span> front: <span class="hljs-type">Int</span><br>    <span class="hljs-function"><span class="hljs-keyword">init</span>()</span> &#123;<br>        inStack <span class="hljs-operator">=</span> []<br>        outStack <span class="hljs-operator">=</span> []<br>        front <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">push</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">x</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> inStack.isEmpty &#123;<br>            front <span class="hljs-operator">=</span> x<br>        &#125;<br>        inStack.append(x)<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">pop</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">if</span> outStack.isEmpty  &#123;<br>            <span class="hljs-keyword">while</span> <span class="hljs-operator">!</span>inStack.isEmpty &#123;<br>                outStack.append(inStack.last<span class="hljs-operator">!</span>)<br>                inStack.removeLast()<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">let</span> num <span class="hljs-operator">=</span> outStack.last<span class="hljs-operator">!</span><br>        outStack.removeLast()<br>        <span class="hljs-keyword">return</span> num<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">peek</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">if</span> <span class="hljs-operator">!</span>outStack.isEmpty &#123;<br>            <span class="hljs-keyword">return</span> outStack.last<span class="hljs-operator">!</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> front<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">empty</span>()</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>         <span class="hljs-keyword">if</span> (inStack.isEmpty <span class="hljs-operator">&amp;&amp;</span> outStack.isEmpty)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>栈</tag>
+      
+      <tag>Swift</tag>
+      
+      <tag>队列</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>20. 有效的括号</title>
     <link href="/2021/09/27/leetcode/20/"/>
     <url>/2021/09/27/leetcode/20/</url>
