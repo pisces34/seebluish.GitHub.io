@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://pisces34.github.io/2021/09/28/leetcode/144BinaryTreePre/</loc>
+    
+    <lastmod>2021-09-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://pisces34.github.io/2021/09/28/leetcode/232/</loc>
     
     <lastmod>2021-09-28</lastmod>
@@ -521,13 +528,6 @@
   
   <url>
     <loc>https://pisces34.github.io/2021/06/18/leetcode/twoSumsort/</loc>
-    
-    <lastmod>2021-06-18</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://pisces34.github.io/2021/06/17/leetcode/BinaryTreePre/</loc>
     
     <lastmod>2021-06-18</lastmod>
     
