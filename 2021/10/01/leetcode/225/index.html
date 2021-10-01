@@ -14,13 +14,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="宫水三叶的题解swift版">
   <meta name="author" content="">
   <meta name="keywords" content="">
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>232. 用栈实现队列 - Pisces34</title>
+  <title>225. 用队列实现栈 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="232. 用栈实现队列">
+            <span class="h2" id="subtitle" title="225. 用队列实现栈">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-10-01 16:59" pubdate>
-        2021年10月1日 下午
+      <time datetime="2021-10-01 20:12" pubdate>
+        2021年10月1日 晚上
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      145 字
+      156 字
     </span>
   
 
@@ -227,12 +227,12 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">232. 用栈实现队列</h1>
+            <h1 style="display: none">225. 用队列实现栈</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-queue-using-stacks/">https://leetcode-cn.com/problems/implement-queue-using-stacks/</a></p>
-<p>执行用时：0 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.7 MB, 在所有 Swift 提交中击败了92.41%的用户</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyQueue</span> </span>&#123;<br>    <span class="hljs-keyword">var</span> front <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>    <span class="hljs-keyword">var</span> inStack <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>    <span class="hljs-keyword">var</span> outStack <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>    <span class="hljs-function"><span class="hljs-keyword">init</span>()</span> &#123;<br>        front <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        inStack <span class="hljs-operator">=</span> []<br>        outStack <span class="hljs-operator">=</span> []<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">push</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">x</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>        <span class="hljs-keyword">if</span> inStack.isEmpty &#123;<br>            front <span class="hljs-operator">=</span> x<br>        &#125;<br>        inStack.append(x)<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">pop</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">if</span> outStack.isEmpty &#123;<br>            <span class="hljs-keyword">while</span> <span class="hljs-operator">!</span>inStack.isEmpty &#123;<br>                outStack.append(inStack.removeLast())<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> outStack.removeLast()<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">peek</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">if</span> <span class="hljs-operator">!</span>outStack.isEmpty &#123;<br>            <span class="hljs-keyword">return</span> outStack.last<span class="hljs-operator">!</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> front<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">empty</span>()</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">return</span> inStack.isEmpty <span class="hljs-operator">&amp;&amp;</span> outStack.isEmpty<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/implement-stack-using-queues/">https://leetcode-cn.com/problems/implement-stack-using-queues/</a></p>
+<p>执行用时：0 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：14 MB, 在所有 Swift 提交中击败了42.62%的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs swift"><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyStack</span> </span>&#123;<br>    <span class="hljs-keyword">var</span> inQueue <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>    <span class="hljs-keyword">var</span> outQueue <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>    <span class="hljs-function"><span class="hljs-keyword">init</span>()</span> &#123;<br>        inQueue <span class="hljs-operator">=</span> []<br>        outQueue <span class="hljs-operator">=</span> []<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">push</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">x</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>        inQueue.append(x)<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">swap</span>()</span> &#123;<br>        <span class="hljs-keyword">var</span> temp <span class="hljs-operator">=</span> inQueue<br>        inQueue <span class="hljs-operator">=</span> outQueue<br>        outQueue <span class="hljs-operator">=</span> temp<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">pop</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">while</span> inQueue.count <span class="hljs-operator">&gt;</span> <span class="hljs-number">1</span> &#123;<br>            outQueue.append(inQueue.removeFirst())<br>        &#125;<br>        <span class="hljs-keyword">var</span> front <span class="hljs-operator">=</span> inQueue.removeFirst()<br>        <span class="hljs-built_in">swap</span>()<br>        <span class="hljs-keyword">return</span> front<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">top</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">while</span> inQueue.count <span class="hljs-operator">&gt;</span> <span class="hljs-number">1</span> &#123;<br>            outQueue.append(inQueue.removeFirst())<br>        &#125;<br>        <span class="hljs-keyword">var</span> front <span class="hljs-operator">=</span> inQueue.first<br>        outQueue.append(inQueue.removeFirst())<br>        <span class="hljs-built_in">swap</span>()<br>        <span class="hljs-keyword">return</span> front<span class="hljs-operator">!</span><br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">empty</span>()</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">return</span> inQueue.isEmpty <span class="hljs-operator">&amp;&amp;</span> outQueue.isEmpty<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -270,18 +270,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/10/01/leetcode/225/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">225. 用队列实现栈</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/10/01/leetcode/701/">
-                        <span class="hidden-mobile">701. 二叉搜索树中的插入操作</span>
+                      <a href="/2021/10/01/leetcode/232copy/">
+                        <span class="hidden-mobile">232. 用栈实现队列</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
