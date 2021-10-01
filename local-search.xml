@@ -4,13 +4,29 @@
   
   
   <entry>
-    <title></title>
+    <title>102. 二叉树的层序遍历</title>
     <link href="/2021/10/01/leetcode/102/"/>
     <url>/2021/10/01/leetcode/102/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">https://leetcode-cn.com/problems/binary-tree-level-order-traversal/</a></p><p>执行用时：12 ms, 在所有 Swift 提交中击败了75.55%的用户<br>内存消耗：13.7 MB, 在所有 Swift 提交中击败了87.96%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">levelOrder</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">root</span>: <span class="hljs-type">TreeNode</span>?)</span> -&gt; [[<span class="hljs-type">Int</span>]] &#123;<br>        <span class="hljs-keyword">if</span> root <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span> &#123;<br>            <span class="hljs-keyword">return</span> []<br>        &#125;<br>        <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> [[<span class="hljs-type">Int</span>]]()<br>        <span class="hljs-keyword">var</span> queue <span class="hljs-operator">=</span> [<span class="hljs-type">TreeNode</span>]()<br>        queue.append(root<span class="hljs-operator">!</span>)<br>        <span class="hljs-keyword">while</span> <span class="hljs-operator">!</span>queue.isEmpty &#123;<br>            <span class="hljs-keyword">var</span> row <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> queue.count &#123;<br>                <span class="hljs-keyword">let</span> <span class="hljs-type">T</span> <span class="hljs-operator">=</span> queue.removeFirst()<br>                row.append(<span class="hljs-type">T</span>.val)<br>                <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> node <span class="hljs-operator">=</span> <span class="hljs-type">T</span>.left &#123;<br>                    queue.append(node)<br>                &#125;<br>                <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> node <span class="hljs-operator">=</span> <span class="hljs-type">T</span>.right &#123;<br>                    queue.append(node)<br>                &#125;<br>            &#125;<br>            res.append(row)<br>        &#125;<br>        <span class="hljs-keyword">return</span> res<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>二叉树</tag>
+      
+      <tag>Swift</tag>
+      
+      <tag>队列</tag>
+      
+    </tags>
     
   </entry>
   
