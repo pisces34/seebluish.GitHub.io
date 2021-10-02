@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>56. 合并区间</title>
+    <link href="/2021/10/02/leetcode/56/"/>
+    <url>/2021/10/02/leetcode/56/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/merge-intervals/">https://leetcode-cn.com/problems/merge-intervals/</a></p><p>执行用时：68 ms, 在所有 Swift 提交中击败了98.28%的用户<br>内存消耗：14.4 MB, 在所有 Swift 提交中击败了97.41%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs swift"> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">merge</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">intervals</span>: [[<span class="hljs-type">Int</span>]])</span> -&gt; [[<span class="hljs-type">Int</span>]] &#123;<br>        <span class="hljs-keyword">if</span> intervals.count <span class="hljs-operator">&lt;</span> <span class="hljs-number">2</span> &#123; <span class="hljs-keyword">return</span> intervals &#125;<br>        <span class="hljs-keyword">var</span> l <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, r <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">let</span> sortedArr <span class="hljs-operator">=</span> intervals.sorted &#123; <span class="hljs-variable">$0</span>[<span class="hljs-number">0</span>] <span class="hljs-operator">&lt;</span> <span class="hljs-variable">$1</span>[<span class="hljs-number">0</span>] &#125;<br>        <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> [[<span class="hljs-type">Int</span>]]()<br>        res.append(sortedArr[<span class="hljs-number">0</span>])<br>        <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> sortedArr &#123;<br>            <span class="hljs-keyword">if</span> res[j][<span class="hljs-number">1</span>] <span class="hljs-operator">&lt;</span> item[<span class="hljs-number">0</span>] &#123;<br>                res.append(item)<br>                j <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                res[j][<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> <span class="hljs-built_in">max</span>(res[j][<span class="hljs-number">1</span>], item[<span class="hljs-number">1</span>])<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数组</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>225. 用队列实现栈</title>
     <link href="/2021/10/01/leetcode/225/"/>
     <url>/2021/10/01/leetcode/225/</url>
@@ -2314,35 +2341,6 @@
       <tag>矩阵</tag>
       
       <tag>数组</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>56. 合并区间</title>
-    <link href="/2021/05/26/leetcode/merge/"/>
-    <url>/2021/05/26/leetcode/merge/</url>
-    
-    <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-built_in">merge</span>(vector&lt;vector&lt;<span class="hljs-keyword">int</span>&gt;&gt; &amp;intervals) &#123;<br>        <span class="hljs-keyword">int</span> length = intervals.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">int</span> start = <span class="hljs-number">0</span>;<br>        vector&lt;vector&lt;<span class="hljs-keyword">int</span>&gt;&gt; res;<br>        vector&lt;<span class="hljs-keyword">int</span>&gt; val;<br>        <span class="hljs-keyword">if</span> (length == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> intervals;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-built_in">sort</span>(intervals.<span class="hljs-built_in">begin</span>(), intervals.<span class="hljs-built_in">end</span>());<br>            res.<span class="hljs-built_in">push_back</span>(intervals[<span class="hljs-number">0</span>]);<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = start + <span class="hljs-number">1</span>; i &lt; length; ++i) &#123;<br>                <span class="hljs-keyword">if</span> (res[start][<span class="hljs-number">1</span>] &gt;= intervals[i][<span class="hljs-number">0</span>]) &#123;<br>                    res[start][<span class="hljs-number">1</span>] = <span class="hljs-built_in">max</span>(res[start][<span class="hljs-number">1</span>], intervals[i][<span class="hljs-number">1</span>]);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    res.<span class="hljs-built_in">push_back</span>(intervals[i]);<br>                    start++;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">return</span> res;<br>        &#125;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>leetcode算法题</category>
-      
-      <category>[object Object]</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>C++</tag>
-      
-      <tag>vector</tag>
       
     </tags>
     
