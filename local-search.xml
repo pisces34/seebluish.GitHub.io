@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>705. 设计哈希集合</title>
+    <link href="/2021/10/03/leetcode/705/"/>
+    <url>/2021/10/03/leetcode/705/</url>
+    
+    <content type="html"><![CDATA[<p>空间换时间</p><p>执行用时：292 ms, 在所有 Swift 提交中击败了95.24% 的用户<br>内存消耗：29.1 MB, 在所有 Swift 提交中击败了9.52% 的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyHashSet</span> </span>&#123;<br>        <span class="hljs-keyword">var</span> <span class="hljs-type">HashTable</span>: [<span class="hljs-type">Int</span>]<br>        <span class="hljs-keyword">let</span> p <span class="hljs-operator">=</span> <span class="hljs-number">1000003</span><br>        <span class="hljs-function"><span class="hljs-keyword">init</span>()</span> &#123;<br>            <span class="hljs-type">HashTable</span> <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>].<span class="hljs-keyword">init</span>(repeating: <span class="hljs-number">1000003</span>, count: <span class="hljs-number">1000003</span>)<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">add</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">key</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">==</span> p &#123;<br>                <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">=</span> key<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">remove</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">key</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">==</span> key &#123;<br>                <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">=</span> p<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">contains</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">key</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">==</span> key &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>            &#125;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+      <tag>哈希表</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>155. 最小栈</title>
     <link href="/2021/10/03/leetcode/155/"/>
     <url>/2021/10/03/leetcode/155/</url>
