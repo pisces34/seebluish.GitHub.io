@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>705. 设计哈希集合 - Pisces34</title>
+  <title>119. 杨辉三角 II - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="705. 设计哈希集合">
+            <span class="h2" id="subtitle" title="119. 杨辉三角 II">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-10-03 18:17" pubdate>
-        2021年10月3日 晚上
+      <time datetime="2021-10-08 17:28" pubdate>
+        2021年10月8日 下午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      119 字
+      228 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      3
        分钟
     </span>
   
@@ -227,12 +227,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">705. 设计哈希集合</h1>
+            <h1 style="display: none">119. 杨辉三角 II</h1>
             
             <div class="markdown-body">
-              <p>空间换时间</p>
-<p>执行用时：292 ms, 在所有 Swift 提交中击败了95.24% 的用户<br>内存消耗：29.1 MB, 在所有 Swift 提交中击败了9.52% 的用户</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyHashSet</span> </span>&#123;<br>        <span class="hljs-keyword">var</span> <span class="hljs-type">HashTable</span>: [<span class="hljs-type">Int</span>]<br>        <span class="hljs-keyword">let</span> p <span class="hljs-operator">=</span> <span class="hljs-number">1000003</span><br>        <span class="hljs-function"><span class="hljs-keyword">init</span>()</span> &#123;<br>            <span class="hljs-type">HashTable</span> <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>].<span class="hljs-keyword">init</span>(repeating: <span class="hljs-number">1000003</span>, count: <span class="hljs-number">1000003</span>)<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">add</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">key</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">==</span> p &#123;<br>                <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">=</span> key<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">remove</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">key</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">==</span> key &#123;<br>                <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">=</span> p<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">contains</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">key</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-type">HashTable</span>[key] <span class="hljs-operator">==</span> key &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>            &#125;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pascals-triangle-ii/">https://leetcode-cn.com/problems/pascals-triangle-ii/</a></p>
+<p>首先想到的是用二维数组保存记录</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getRow</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">rowIndex</span>: <span class="hljs-type">Int</span>)</span> -&gt; [<span class="hljs-type">Int</span>] &#123;<br>        <span class="hljs-keyword">if</span> rowIndex <span class="hljs-operator">==</span> <span class="hljs-number">0</span> &#123;<br>            <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>]<br>        &#125;<br>        <span class="hljs-keyword">var</span> dp <span class="hljs-operator">=</span> [[<span class="hljs-type">Int</span>]]()<br>        <span class="hljs-keyword">var</span> row <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>        row.append(<span class="hljs-number">1</span>)<br>        dp.append(row)<br>        row <span class="hljs-operator">=</span> []<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span> <span class="hljs-operator">...</span> rowIndex &#123;<br>            row.append(<span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">let</span> n <span class="hljs-operator">=</span> dp[i<span class="hljs-operator">-</span><span class="hljs-number">1</span>].count <span class="hljs-operator">-</span> <span class="hljs-number">1</span><br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>                row.append(dp[i<span class="hljs-operator">-</span><span class="hljs-number">1</span>][j]<span class="hljs-operator">+</span>dp[i<span class="hljs-operator">-</span><span class="hljs-number">1</span>][j<span class="hljs-operator">+</span><span class="hljs-number">1</span>])<br>            &#125;<br>            row.append(<span class="hljs-number">1</span>)<br>            dp.append(row)<br>            row <span class="hljs-operator">=</span> []<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[rowIndex]<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>O(rowIndex) 空间复杂度， 用两个一维数组</p>
+<p>执行用时：0 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.3 MB, 在所有 Swift 提交中击败了98.36%的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getRow</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">rowIndex</span>: <span class="hljs-type">Int</span>)</span> -&gt; [<span class="hljs-type">Int</span>] &#123;<br>        <span class="hljs-keyword">if</span> rowIndex <span class="hljs-operator">==</span> <span class="hljs-number">0</span> &#123;<br>            <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>]<br>        &#125;<br>        <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>        <span class="hljs-keyword">var</span> row <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span> <span class="hljs-operator">...</span> rowIndex &#123;<br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">...</span> i &#123;<br>                <span class="hljs-keyword">if</span> j <span class="hljs-operator">==</span> <span class="hljs-number">0</span> <span class="hljs-operator">||</span> j <span class="hljs-operator">==</span> i &#123;<br>                    row.append(<span class="hljs-number">1</span>)<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    row.append(res[j<span class="hljs-operator">-</span><span class="hljs-number">1</span>] <span class="hljs-operator">+</span> res[j])<br>                &#125;<br>            &#125;<br>            res <span class="hljs-operator">=</span> row<br>            row <span class="hljs-operator">=</span> []<br>        &#125;<br>        <span class="hljs-keyword">return</span> res<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -249,9 +253,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a>
+                      <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
                     
                   </div>
                 
@@ -268,18 +272,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/10/08/leetcode/119/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">119. 杨辉三角 II</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/10/03/leetcode/155/">
-                        <span class="hidden-mobile">155. 最小栈</span>
+                      <a href="/2021/10/03/leetcode/705/">
+                        <span class="hidden-mobile">705. 设计哈希集合</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
