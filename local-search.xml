@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>48. 旋转图像</title>
+    <link href="/2021/10/10/leetcode/48/"/>
+    <url>/2021/10/10/leetcode/48/</url>
+    
+    <content type="html"><![CDATA[<p>题目地址：<a href="https://leetcode-cn.com/problems/rotate-image/">https://leetcode-cn.com/problems/rotate-image/</a></p><p>执行用时：4 ms, 在所有 Swift 提交中击败了100.00%的用户<br>内存消耗：13.7 MB, 在所有 Swift 提交中击败了32.10%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">rotate</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">matrix</span>: <span class="hljs-keyword">inout</span> [[<span class="hljs-type">Int</span>]])</span> &#123;<br>        <span class="hljs-keyword">let</span> n <span class="hljs-operator">=</span> matrix.count<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>            matrix[i].reverse()<br>        &#125;<br>        <span class="hljs-keyword">var</span> left <span class="hljs-operator">=</span>  <span class="hljs-number">1</span>, bottom <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">stride</span>(from: n<span class="hljs-operator">-</span><span class="hljs-number">1</span>, to: <span class="hljs-number">0</span>, by: <span class="hljs-operator">-</span><span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-comment">//向上一层</span><br>            bottom <span class="hljs-operator">=</span> i <span class="hljs-operator">-</span> <span class="hljs-number">1</span><br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> left <span class="hljs-operator">..&lt;</span> n &#123;<br>                <span class="hljs-keyword">let</span> tmp <span class="hljs-operator">=</span> matrix[i][j]<br>                matrix[i][j] <span class="hljs-operator">=</span> matrix[bottom][left<span class="hljs-operator">-</span><span class="hljs-number">1</span>]<br>                matrix[bottom][left<span class="hljs-operator">-</span><span class="hljs-number">1</span>] <span class="hljs-operator">=</span> tmp<br>                bottom <span class="hljs-operator">-=</span> <span class="hljs-number">1</span><br>            &#125;<br>            <span class="hljs-comment">//向右一列</span><br>            left <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>矩阵</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>59. 螺旋矩阵 II</title>
     <link href="/2021/10/10/leetcode/59/"/>
     <url>/2021/10/10/leetcode/59/</url>
@@ -2414,33 +2441,6 @@
       <tag>C++</tag>
       
       <tag>双指针</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>48. 旋转图像</title>
-    <link href="/2021/06/10/leetcode/rotateMatrix/"/>
-    <url>/2021/06/10/leetcode/rotateMatrix/</url>
-    
-    <content type="html"><![CDATA[<p>题目地址：<a href="https://leetcode-cn.com/problems/rotate-image/">https://leetcode-cn.com/problems/rotate-image/</a><br>执行用时：8 ms, 在所有 C++ 提交中击败了42.94% 的用户<br>内存消耗：6.8 MB, 在所有 C++ 提交中击败了90.84% 的用户</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rotate</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> N = matrix.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">int</span> i,j;<br>        <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i&lt; N; i++ )&#123; <span class="hljs-comment">//矩阵转置</span><br>            <span class="hljs-keyword">for</span>(j = i+<span class="hljs-number">1</span>; j&lt;N; j++)&#123;<br>                <span class="hljs-built_in">swap</span>(matrix[i][j],matrix[j][i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i&lt; N; i++ )&#123; <span class="hljs-comment">//水平翻转</span><br>               <span class="hljs-built_in">reverse</span>(matrix[i].<span class="hljs-built_in">begin</span>(),matrix[i].<span class="hljs-built_in">end</span>());<br>        &#125;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>leetcode算法题</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>C++</tag>
-      
-      <tag>矩阵</tag>
       
     </tags>
     
