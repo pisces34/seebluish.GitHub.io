@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>5903. 简易银行系统</title>
+    <link href="/2021/10/18/leetcode/5903/"/>
+    <url>/2021/10/18/leetcode/5903/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bank</span> </span>&#123;<br><br>    <span class="hljs-keyword">var</span> bank:[<span class="hljs-type">Int</span>]<br>    <span class="hljs-keyword">let</span> length:<span class="hljs-type">Int</span><br>    <span class="hljs-function"><span class="hljs-keyword">init</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">balance</span>: [<span class="hljs-type">Int</span>])</span> &#123;<br>        bank <span class="hljs-operator">=</span> balance<br>        length <span class="hljs-operator">=</span> balance.count<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">transfer</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">account1</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">account2</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">money</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> account1 <span class="hljs-operator">&lt;=</span> length <span class="hljs-operator">&amp;&amp;</span> account2 <span class="hljs-operator">&lt;=</span> length <span class="hljs-operator">&amp;&amp;</span> bank[account1<span class="hljs-operator">-</span><span class="hljs-number">1</span>] <span class="hljs-operator">&gt;=</span> money &#123;<br>            bank[account1<span class="hljs-operator">-</span><span class="hljs-number">1</span>] <span class="hljs-operator">-=</span> money<br>            bank[account2<span class="hljs-operator">-</span><span class="hljs-number">1</span>] <span class="hljs-operator">+=</span> money<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">deposit</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">account</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">money</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> account <span class="hljs-operator">&lt;=</span> length &#123;<br>            bank[account<span class="hljs-operator">-</span><span class="hljs-number">1</span>] <span class="hljs-operator">+=</span> money<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">withdraw</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">account</span>: <span class="hljs-type">Int</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">money</span>: <span class="hljs-type">Int</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">if</span> account <span class="hljs-operator">&lt;=</span> length <span class="hljs-operator">&amp;&amp;</span> bank[account<span class="hljs-operator">-</span><span class="hljs-number">1</span>] <span class="hljs-operator">&gt;=</span> money &#123;<br>            bank[account<span class="hljs-operator">-</span><span class="hljs-number">1</span>] <span class="hljs-operator">-=</span> money<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数组</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>409. 最长回文串</title>
     <link href="/2021/10/16/leetcode/409/"/>
     <url>/2021/10/16/leetcode/409/</url>
