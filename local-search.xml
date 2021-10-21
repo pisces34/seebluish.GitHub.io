@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>290. 单词规律</title>
+    <link href="/2021/10/21/leetcode/290/"/>
+    <url>/2021/10/21/leetcode/290/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/word-pattern/">https://leetcode-cn.com/problems/word-pattern/</a></p><p>执行用时：4 ms, 在所有 Swift 提交中击败了85.71%的用户<br>内存消耗：13.6 MB, 在所有 Swift 提交中击败了95.24%的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">wordPattern</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">pattern</span>: <span class="hljs-type">String</span>, <span class="hljs-keyword">_</span> <span class="hljs-params">s</span>: <span class="hljs-type">String</span>)</span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-keyword">var</span> strArr <span class="hljs-operator">=</span> s.split(separator: <span class="hljs-string">&quot; &quot;</span>)<br>        <span class="hljs-keyword">var</span> dict <span class="hljs-operator">=</span> [<span class="hljs-type">String</span>: <span class="hljs-type">Character</span>]()<br>        <span class="hljs-keyword">var</span> pat <span class="hljs-operator">=</span> <span class="hljs-type">Array</span>(pattern)<br>        <span class="hljs-keyword">let</span> n <span class="hljs-operator">=</span> strArr.count<br>        <span class="hljs-keyword">if</span> n <span class="hljs-operator">!=</span> pat.count &#123; <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>&#125;<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> v <span class="hljs-operator">=</span> dict[<span class="hljs-type">String</span>(strArr[i])] &#123;<br>                <span class="hljs-keyword">if</span> v <span class="hljs-operator">==</span> pat[i] &#123;<br>                    <span class="hljs-keyword">continue</span><br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span><br>                &#125;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                dict[<span class="hljs-type">String</span>(strArr[i])] <span class="hljs-operator">=</span> pat[i]<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> <span class="hljs-type">Set</span>(dict.values).count <span class="hljs-operator">!=</span> dict.values.count &#123; <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>&#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Swift</tag>
+      
+      <tag>哈希表</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>5903. 简易银行系统</title>
     <link href="/2021/10/18/leetcode/5903/"/>
     <url>/2021/10/18/leetcode/5903/</url>
