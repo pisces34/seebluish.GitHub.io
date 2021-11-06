@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      178 字
+      180 字
     </span>
   
 
@@ -232,8 +232,10 @@
             <div class="markdown-body">
               <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/">https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/</a></p>
 <p>执行用时：928 ms, 在所有 Swift 提交中击败了95.83% 的用户<br>内存消耗：15.9 MB, 在所有 Swift 提交中击败了95.08% 的用户</p>
+<p>Swift:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CQueue</span> </span>&#123;<br>    <span class="hljs-keyword">var</span> s1 <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>    <span class="hljs-keyword">var</span> s2 <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>    <span class="hljs-function"><span class="hljs-keyword">init</span>()</span> &#123; <br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">appendTail</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">value</span>: <span class="hljs-type">Int</span>)</span> &#123;<br>        s1.append(value)<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">deleteHead</span>()</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">if</span> s2.isEmpty &#123;<br>            <span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span> head <span class="hljs-operator">=</span> s1.popLast() &#123;<br>                s2.append(head)<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> s2.popLast() <span class="hljs-operator">??</span> <span class="hljs-operator">-</span><span class="hljs-number">1</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<p>Java:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CQueue</span> </span>&#123;<br>    Deque&lt;Integer&gt; s1;<br>    Deque&lt;Integer&gt; s2;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CQueue</span><span class="hljs-params">()</span> </span>&#123;<br>        s1 = <span class="hljs-keyword">new</span> LinkedList&lt;Integer&gt;();<br>        s2 = <span class="hljs-keyword">new</span> LinkedList&lt;Integer&gt;();<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendTail</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>&#123;<br>        s1.push(value);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">deleteHead</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (s2.isEmpty()) &#123;<br>            <span class="hljs-keyword">while</span> (!s1.isEmpty()) &#123;<br>                s2.push(s1.pop());<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (s2.isEmpty()) &#123;<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> s2.pop();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
@@ -269,6 +271,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/11/06/leetcode/offer30/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">剑指 Offer 30. 包含min函数的栈</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
