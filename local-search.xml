@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>剑指 Offer 53 - I. 在排序数组中查找数字 I</title>
+    <link href="/2021/11/08/leetcode/offer53-1/"/>
+    <url>/2021/11/08/leetcode/offer53-1/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/">https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/</a></p><p>执行用时：0 ms, 在所有 Java 提交中击败了100.00% 的用户<br>内存消耗：41.4 MB, 在所有 Java 提交中击败了36.74% 的用户</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> start = <span class="hljs-number">0</span>, count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>            <span class="hljs-keyword">int</span> mid = left + (right-left)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>                start = mid;<br>                <span class="hljs-keyword">break</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>                right--;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                left++;<br>            &#125;<br>        &#125;<br>        right = start;<br>        left = start-<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (right &lt; nums.length) &#123;<br>            <span class="hljs-keyword">if</span> (nums[right] == target) &#123;<br>                count++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            right++;<br>        &#125;<br>        <span class="hljs-keyword">while</span> (left &gt;= <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> (nums[left] == target) &#123;<br>                count++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            left--;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>138. 复制带随机指针的链表</title>
     <link href="/2021/11/07/leetcode/138/"/>
     <url>/2021/11/07/leetcode/138/</url>
