@@ -237,6 +237,7 @@
 
 <p>Kotlin:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    fun levelOrder(root: <span class="hljs-type">TreeNode</span>?): <span class="hljs-type">List</span>&lt;<span class="hljs-type">List</span>&lt;<span class="hljs-type">Int</span>&gt;&gt; &#123;<br>        <span class="hljs-keyword">if</span> (root <span class="hljs-operator">==</span> null) &#123;<br>            <span class="hljs-keyword">return</span> emptyList()<br>        &#125;<br>        val queue <span class="hljs-operator">=</span> <span class="hljs-type">ArrayDeque</span>&lt;<span class="hljs-type">TreeNode</span>&gt;()<br>        val list <span class="hljs-operator">=</span> <span class="hljs-type">ArrayList</span>&lt;<span class="hljs-type">ArrayList</span>&lt;<span class="hljs-type">Int</span>&gt;&gt;()<br>        queue.add(root)<br>        <span class="hljs-keyword">while</span> (queue.isNotEmpty()) &#123;<br>            <span class="hljs-keyword">var</span> arr <span class="hljs-operator">=</span> <span class="hljs-type">ArrayDeque</span>&lt;<span class="hljs-type">Int</span>&gt;()<br>            <span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> queue.size downTo <span class="hljs-number">1</span> step <span class="hljs-number">1</span>) &#123;<br>                <span class="hljs-keyword">var</span> cur <span class="hljs-operator">=</span> queue.removeFirst()<br>                <span class="hljs-keyword">if</span> (list.size <span class="hljs-operator">%</span> <span class="hljs-number">2</span> <span class="hljs-operator">==</span> <span class="hljs-number">0</span>) &#123;<br>                    arr.addLast(cur.`val`)<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    arr.addFirst(cur.`val`)<br>                &#125;<br>                cur.left<span class="hljs-operator">?</span>.let &#123;<br>                    queue.add(cur.left<span class="hljs-operator">!!</span>)<br>                &#125;<br>                cur.right<span class="hljs-operator">?</span>.let &#123;<br>                    queue.add(cur.right<span class="hljs-operator">!!</span>)<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">var</span> res <span class="hljs-operator">=</span> <span class="hljs-type">ArrayList</span>&lt;<span class="hljs-type">Int</span>&gt;(arr)<br>            list.add(res)<br>        &#125;<br>        <span class="hljs-keyword">return</span> list<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
             </div>
             <hr>
             <div>
@@ -252,6 +253,8 @@
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
                     
                       <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
                     
@@ -271,6 +274,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/11/20/leetcode/offer27/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">剑指 Offer 27. 二叉树的镜像</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

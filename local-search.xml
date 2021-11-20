@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>剑指 Offer 27. 二叉树的镜像</title>
+    <link href="/2021/11/20/leetcode/offer27/"/>
+    <url>/2021/11/20/leetcode/offer27/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/">https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/</a></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">mirrorTree</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">root</span>: <span class="hljs-type">TreeNode</span>?)</span> -&gt; <span class="hljs-type">TreeNode</span>? &#123;<br>        <span class="hljs-keyword">if</span> root <span class="hljs-operator">==</span> <span class="hljs-literal">nil</span> &#123;<br>            <span class="hljs-keyword">return</span> root<br>        &#125;<br>        <span class="hljs-keyword">var</span> temp <span class="hljs-operator">=</span> root<span class="hljs-operator">?</span>.left<br>        root<span class="hljs-operator">?</span>.left <span class="hljs-operator">=</span> root<span class="hljs-operator">?</span>.right<br>        root<span class="hljs-operator">?</span>.right <span class="hljs-operator">=</span> temp<br>        mirrorTree(root<span class="hljs-operator">?</span>.left)<br>        mirrorTree(root<span class="hljs-operator">?</span>.right)<br>        <span class="hljs-keyword">return</span> root<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><p>Kotlin:<br>执行用时：132 ms, 在所有 Kotlin 提交中击败了94.87% 的用户<br>内存消耗：32.9 MB, 在所有 Kotlin 提交中击败了12.82% 的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    fun mirrorTree(root: <span class="hljs-type">TreeNode</span>?): <span class="hljs-type">TreeNode</span>? &#123;<br>        root <span class="hljs-operator">?</span>: <span class="hljs-keyword">return</span> null<br>        <span class="hljs-keyword">var</span> temp <span class="hljs-operator">=</span> root.left<br>        root.left <span class="hljs-operator">=</span> root.right<br>        root.right <span class="hljs-operator">=</span> temp<br>        mirrorTree(root.left)<br>        mirrorTree(root.right)<br>        <span class="hljs-keyword">return</span> root<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>二叉树</tag>
+      
+      <tag>Swift</tag>
+      
+      <tag>Kotlin</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>剑指 Offer 32 - III. 从上到下打印二叉树 III</title>
     <link href="/2021/11/19/leetcode/offer32-3/"/>
     <url>/2021/11/19/leetcode/offer32-3/</url>
@@ -19,6 +48,8 @@
     
     
     <tags>
+      
+      <tag>二叉树</tag>
       
       <tag>Swift</tag>
       
