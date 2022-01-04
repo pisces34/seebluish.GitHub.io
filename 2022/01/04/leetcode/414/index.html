@@ -14,13 +14,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="给你一个非空数组，返回此数组中 第三大的数 。如果不存在，则返回数组中最大的数。。">
   <meta name="author" content="">
   <meta name="keywords" content="">
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>703. 数据流中的第 K 大元素 - Pisces34</title>
+  <title>414. 第三大的数 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="703. 数据流中的第 K 大元素">
+            <span class="h2" id="subtitle" title="414. 第三大的数">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-03 22:59" pubdate>
-        2022年1月3日 晚上
+      <time datetime="2022-01-04 09:44" pubdate>
+        2022年1月4日 上午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      71 字
+      217 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -227,11 +227,17 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">703. 数据流中的第 K 大元素</h1>
+            <h1 style="display: none">414. 第三大的数</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/">https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KthLargest</span> </span>&#123;<br>    PriorityQueue&lt;Integer&gt; queue = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;();<br>    <span class="hljs-keyword">int</span> point = <span class="hljs-number">0</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">KthLargest</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k, <span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        point = k;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num: nums) &#123;<br>            add(num);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>        queue.offer(val);<br>        <span class="hljs-keyword">if</span> (queue.size() &gt; point) &#123;<br>            queue.poll();<br>        &#125;<br>        <span class="hljs-keyword">return</span> queue.peek();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p>执行用时：28 ms, 在所有 Swift 提交中击败了86.11%的用户<br>内存消耗：14.1 MB, 在所有 Swift 提交中击败了13.89%的用户</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">thirdMax</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">nums</span>: [<span class="hljs-type">Int</span>])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> sortnum <span class="hljs-operator">=</span> nums.sorted(by: &#123;<span class="hljs-variable">$0</span> <span class="hljs-operator">&gt;</span> <span class="hljs-variable">$1</span>&#125;)<br>        <span class="hljs-keyword">let</span> n <span class="hljs-operator">=</span> sortnum.count<br>        <span class="hljs-keyword">var</span> diff <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span> <span class="hljs-operator">..&lt;</span> n &#123;<br>            <span class="hljs-keyword">if</span> sortnum[i] <span class="hljs-operator">!=</span> sortnum[i<span class="hljs-operator">-</span><span class="hljs-number">1</span>] &#123;<br>                diff <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125;<br>            <span class="hljs-keyword">if</span> diff <span class="hljs-operator">==</span> <span class="hljs-number">3</span> &#123;<br>                <span class="hljs-keyword">return</span> sortnum[i]<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sortnum[<span class="hljs-number">0</span>]<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>set去重+排序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">thirdMax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        HashSet&lt;Integer&gt; set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            set.add(num);<br>        &#125;<br>        ArrayList&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;(set);<br>        Collections.sort(list);<br>        <span class="hljs-keyword">return</span> list.size() &lt; <span class="hljs-number">3</span> ? list.get(list.size() - <span class="hljs-number">1</span>) : list.get(list.size()-<span class="hljs-number">3</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">thirdMax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        Arrays.sort(nums);<br>        <span class="hljs-keyword">int</span> diff = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> last = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = last; i &gt;= <span class="hljs-number">1</span>; i--) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] != nums[i-<span class="hljs-number">1</span>]) &#123;<br>                diff++;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (diff == <span class="hljs-number">3</span>) &#123;<br>                <span class="hljs-keyword">return</span> nums[i-<span class="hljs-number">1</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[last];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
             </div>
             <hr>
             <div>
@@ -250,7 +256,7 @@
                     
                       <a class="hover-with-bg" href="/tags/java/">java</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">优先队列</a>
+                      <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
                     
                   </div>
                 
@@ -267,18 +273,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/04/leetcode/414/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">414. 第三大的数</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/24/English/economist1/">
-                        <span class="hidden-mobile">Nongfu Spring is a hit with tipplers and investors alike</span>
+                      <a href="/2022/01/03/leetcode/703dataStream/">
+                        <span class="hidden-mobile">703. 数据流中的第 K 大元素</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
