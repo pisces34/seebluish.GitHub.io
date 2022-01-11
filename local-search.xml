@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>1. 两数之和</title>
+    <link href="/2022/01/11/leetcode/1/"/>
+    <url>/2022/01/11/leetcode/1/</url>
+    
+    <content type="html"><![CDATA[<p>最新提交看到别人的新理解：内循环的时候比较两次，分别是起点i和终点last上的值。</p><p>执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户<br>内存消耗：38.7 MB, 在所有 Java 提交中击败了27.42%的用户</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;<br>        <span class="hljs-keyword">int</span> len = nums.length;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i &lt; len / <span class="hljs-number">2</span>; i++) &#123;<br>            <span class="hljs-keyword">int</span> last = len - i - <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = i+<span class="hljs-number">1</span>; j &lt; len; j++) &#123;<br>                <span class="hljs-keyword">if</span>(nums[i]+nums[j] == target) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;i, j&#125;;<br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[j] + nums[last] == target) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;j, last&#125;;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">0</span>];<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数组</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>剑指 Offer 06. 从尾到头打印链表</title>
     <link href="/2022/01/10/leetcode/offer06/"/>
     <url>/2022/01/10/leetcode/offer06/</url>
@@ -19,6 +46,8 @@
     
     
     <tags>
+      
+      <tag>链表</tag>
       
       <tag>Java</tag>
       
@@ -3501,33 +3530,6 @@
     
     
     <tags>
-      
-      <tag>Java</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>1. 两数之和 （two-pointers）</title>
-    <link href="/2021/05/08/leetcode/twoSum1/"/>
-    <url>/2021/05/08/leetcode/twoSum1/</url>
-    
-    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;<br>        <span class="hljs-comment">// 结果数组</span><br>        <span class="hljs-keyword">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">2</span>];<br>        <span class="hljs-comment">// 克隆传入数组</span><br>        <span class="hljs-keyword">int</span>[] temp = nums.clone();<br>        <span class="hljs-comment">// 对临时数组从小到大排序</span><br>        Arrays.sort(temp);<br>        <span class="hljs-comment">// 初始化左右指针</span><br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = temp.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-comment">// 不重合</span><br>        <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>            <span class="hljs-comment">// 两数之和大于目标值, 将右边的指针左移</span><br>            <span class="hljs-keyword">if</span> (temp[i] + temp[j] &gt; target) &#123;<br>                j--;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (temp[i] + temp[j] &lt; target) &#123;<br>                i++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// n为数组总长度</span><br>        <span class="hljs-keyword">int</span> n = temp.length;<br>        <span class="hljs-comment">// 循环找出临时数组中在传入数组中的下标, 并赋值给结果数组</span><br>        <span class="hljs-comment">// i&lt;n, i=n, 保证找到一个后不再重复指向同一个,&quot;移走&quot;指针</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; n; k++) &#123;<br>            <span class="hljs-keyword">if</span> (i &lt; n &amp;&amp; temp[i] == nums[k]) &#123;<br>                res[<span class="hljs-number">0</span>] = k;<br>                i = n;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j &lt; n &amp;&amp; temp[j] == nums[k]) &#123;<br>                res[<span class="hljs-number">1</span>] = k;<br>                j = n;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>leetcode算法题</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>双指针</tag>
       
       <tag>Java</tag>
       
