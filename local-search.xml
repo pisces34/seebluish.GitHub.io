@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>1438. 绝对差不超过限制的最长连续子数组</title>
+    <link href="/2022/01/20/leetcode/1438/"/>
+    <url>/2022/01/20/leetcode/1438/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/">https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/</a></p><p>执行用时：53 ms, 在所有 Java 提交中击败了47.98% 的用户<br>内存消耗：47 MB, 在所有 Java 提交中击败了92.63% 的用户</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">longestSubarray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> limit)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> maxV = nums[<span class="hljs-number">0</span>], minV = nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>,right = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> n = nums.length;<br>        <span class="hljs-keyword">while</span> (left &lt;= right &amp;&amp; right &lt; n)&#123;<br>            <span class="hljs-keyword">if</span> (nums[right] &gt; maxV) &#123;<br>                maxV = nums[right];<br>            &#125;<br>            <span class="hljs-keyword">if</span> (nums[right] &lt; minV) &#123;<br>                minV = nums[right];<br>            &#125;<br>            <span class="hljs-keyword">if</span> (maxV - minV &lt;= limit) &#123;<br>                res = Math.max(res, right-left+<span class="hljs-number">1</span>);<br>                right++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                left++;<br>                minV = <span class="hljs-number">1000000001</span>;<br>                maxV = <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = left; i &lt;= right ; i++) &#123;<br>                    <span class="hljs-keyword">if</span> (nums[i] &gt; maxV) &#123;<br>                        maxV = nums[i];<br>                    &#125;<br>                    <span class="hljs-keyword">if</span> (nums[i] &lt; minV) &#123;<br>                        minV = nums[i];<br>                    &#125;<br>                &#125;<br>                res = Math.max(res, right-left+<span class="hljs-number">1</span>);<br>                right++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数组</tag>
+      
+      <tag>Java</tag>
+      
+      <tag>滑动窗口</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>剑指 Offer 07. 重建二叉树</title>
     <link href="/2022/01/19/leetcode/offer07/"/>
     <url>/2022/01/19/leetcode/offer07/</url>
