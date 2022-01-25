@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>2148. 元素计数 - Pisces34</title>
+  <title>3. 无重复字符的最长子串 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="2148. 元素计数">
+            <span class="h2" id="subtitle" title="3. 无重复字符的最长子串">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-24 17:17" pubdate>
-        2022年1月24日 下午
+      <time datetime="2022-01-25 09:12" pubdate>
+        2022年1月25日 上午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      289 字
+      207 字
     </span>
   
 
@@ -227,22 +227,14 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">2148. 元素计数</h1>
+            <h1 style="display: none">3. 无重复字符的最长子串</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-elements-with-strictly-smaller-and-greater-elements/">https://leetcode-cn.com/problems/count-elements-with-strictly-smaller-and-greater-elements/</a></p>
-<p>示例 1：</p>
-<ul>
-<li>输入：nums = [11,7,2,15]</li>
-<li>输出：2<br>解释：元素 7 ：严格较小元素是元素 2 ，严格较大元素是元素 11 。<br>元素 11 ：严格较小元素是元素 7 ，严格较大元素是元素 15 。<br>总计有 2 个元素都满足在 nums 中同时存在一个严格较小元素和一个严格较大元素。</li>
-</ul>
-<p>示例 2：</p>
-<ul>
-<li>输入：nums = [-3,3,3,90]</li>
-<li>输出：2<br>解释：元素 3 ：严格较小元素是元素 -3 ，严格较大元素是元素 90 。<br>由于有两个元素的值为 3 ，总计有 2 个元素都满足在 nums 中同时存在一个严格较小元素和一个严格较大元素。</li>
-</ul>
-<p>执行用时：20 ms, 在所有 Swift 提交中击败了100.00% 的用户<br>内存消耗：13.7 MB, 在所有 Swift 提交中击败了100.00% 的用户</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">countElements</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">nums</span>: [<span class="hljs-type">Int</span>])</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">var</span> sortedNum <span class="hljs-operator">=</span> nums.sorted()<br>        <span class="hljs-keyword">let</span> l <span class="hljs-operator">=</span> sortedNum[<span class="hljs-number">0</span>]<br>        <span class="hljs-keyword">let</span> r <span class="hljs-operator">=</span> sortedNum.last<span class="hljs-operator">!</span><br>        <span class="hljs-keyword">var</span> count <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> sortedNum &#123;<br>            <span class="hljs-keyword">if</span> i <span class="hljs-operator">&gt;</span> l <span class="hljs-operator">&amp;&amp;</span> i <span class="hljs-operator">&lt;</span> r &#123;<br>                count<span class="hljs-operator">+=</span><span class="hljs-number">1</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/</a></p>
+<h3 id="java-代码"><a href="#java-代码" class="headerlink" title="java 代码"></a>java 代码</h3><p>执行用时：2 ms, 在所有 Java 提交中击败了95.98% 的用户<br>内存消耗：41.4 MB, 在所有 Java 提交中击败了5.02% 的用户</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lengthOfLongestSubstring</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (s.length() == <span class="hljs-number">1</span>) &#123; <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;&#125;<br>        <span class="hljs-keyword">int</span> cursor, end = <span class="hljs-number">1</span>, length = s.length();<br>        <span class="hljs-keyword">int</span> beginAgain = <span class="hljs-number">0</span>, longest = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (end &lt; length) &#123;<br>            cursor = beginAgain;<br>            <span class="hljs-keyword">while</span> (cursor &lt; end) &#123;<br>                <span class="hljs-keyword">if</span> (s.charAt(cursor) == s.charAt(end)) &#123;<br>                    beginAgain = cursor + <span class="hljs-number">1</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>                cursor++;<br>            &#125;<br>            longest = Math.max(longest, end - beginAgain + <span class="hljs-number">1</span>);<br>            end++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> longest;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="swift-代码"><a href="#swift-代码" class="headerlink" title="swift 代码"></a>swift 代码</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">lengthOfLongestSubstring</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">s</span>: <span class="hljs-type">String</span>)</span> -&gt; <span class="hljs-type">Int</span> &#123;<br>        <span class="hljs-keyword">if</span> s.isEmpty &#123; <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>&#125;<br>        <span class="hljs-keyword">let</span> length <span class="hljs-operator">=</span> s.count<br>        <span class="hljs-keyword">var</span> count <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">var</span> str <span class="hljs-operator">=</span> <span class="hljs-type">Array</span>(s)<br>        <span class="hljs-keyword">var</span> cursor <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, end <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, beginAgain <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">while</span> end <span class="hljs-operator">&lt;</span> length &#123;<br>            cursor <span class="hljs-operator">=</span> beginAgain<br>            <span class="hljs-keyword">while</span> cursor <span class="hljs-operator">&lt;</span> end &#123;<br>                <span class="hljs-keyword">if</span> str[cursor] <span class="hljs-operator">==</span> str[end] &#123;<br>                    beginAgain <span class="hljs-operator">=</span> cursor <span class="hljs-operator">+</span> <span class="hljs-number">1</span><br>                    <span class="hljs-keyword">break</span><br>                &#125;<br>                cursor <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125;<br>            count <span class="hljs-operator">=</span> <span class="hljs-built_in">max</span>(count, end <span class="hljs-operator">-</span> beginAgain <span class="hljs-operator">+</span> <span class="hljs-number">1</span>)<br>            end <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> count<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -259,7 +251,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
+                      <a class="hover-with-bg" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
                     
                       <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
                     
@@ -278,18 +272,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/25/leetcode/3/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">3. 无重复字符的最长子串</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/23/leetcode/169/">
-                        <span class="hidden-mobile">169. 多数元素</span>
+                      <a href="/2022/01/24/leetcode/2148/">
+                        <span class="hidden-mobile">2148. 元素计数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
