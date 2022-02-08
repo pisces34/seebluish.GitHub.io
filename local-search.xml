@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>662. 二叉树最大宽度</title>
+    <link href="/2022/02/08/leetcode/662/"/>
+    <url>/2022/02/08/leetcode/662/</url>
+    
+    <content type="html"><![CDATA[<p>参考题解<br>层序遍历，给节点的值编号，给每个节点一个 position 值，如果我们走向左子树，那么 position -&gt; position * 2，如果我们走向右子树，那么 position -&gt; positon * 2 + 1</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">widthOfBinaryTree</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) &#123; <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>        <span class="hljs-keyword">int</span> maxWidth = <span class="hljs-number">0</span>;<br>        LinkedList&lt;TreeNode&gt; queue = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        queue.add(root);<br>        root.val = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (!queue.isEmpty()) &#123;<br>            <span class="hljs-keyword">int</span> curWidth = queue.getLast().val - queue.getFirst().val + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = queue.size(); i &gt; <span class="hljs-number">0</span> ; --i) &#123;<br>                TreeNode cur;<br>                cur = queue.poll();<br>                <span class="hljs-keyword">if</span> (cur.left != <span class="hljs-keyword">null</span>) &#123;<br>                    queue.add(cur.left);<br>                    cur.left.val = cur.val*<span class="hljs-number">2</span>;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (cur.right != <span class="hljs-keyword">null</span>) &#123;<br>                    queue.add(cur.right);<br>                    cur.right.val = cur.val*<span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (curWidth &gt; maxWidth) &#123;<br>                maxWidth = curWidth;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> maxWidth;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>二叉树</tag>
+      
+      <tag>BFS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>54. 螺旋矩阵</title>
     <link href="/2022/02/06/leetcode/54/"/>
     <url>/2022/02/06/leetcode/54/</url>
