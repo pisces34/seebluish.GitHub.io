@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>1189. “气球” 的最大数量</title>
+    <link href="/2022/02/13/leetcode/1189/"/>
+    <url>/2022/02/13/leetcode/1189/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/maximum-number-of-balloons/">https://leetcode-cn.com/problems/maximum-number-of-balloons/</a></p><p>执行用时：1 ms, 在所有 Java 提交中击败了100.00% 的用户<br>内存消耗：39.6 MB, 在所有 Java 提交中击败了10.34% 的用户</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxNumberOfBalloons</span><span class="hljs-params">(String text)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span>[] chars = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">26</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> ch: text.toCharArray()) &#123;<br>            chars[ch - <span class="hljs-string">&#x27;a&#x27;</span>]++;<br>        &#125;<br>        <span class="hljs-comment">// 字符逐个比较最少数量</span><br>        ans = Math.min(chars[<span class="hljs-number">0</span>], chars[<span class="hljs-number">1</span>]);<br>        ans = Math.min(chars[<span class="hljs-string">&#x27;l&#x27;</span> - <span class="hljs-string">&#x27;a&#x27;</span>]/<span class="hljs-number">2</span>, ans);<br>        ans = Math.min(chars[<span class="hljs-string">&#x27;o&#x27;</span> - <span class="hljs-string">&#x27;a&#x27;</span>]/<span class="hljs-number">2</span>, ans);<br>        ans = Math.min(chars[<span class="hljs-string">&#x27;n&#x27;</span> - <span class="hljs-string">&#x27;a&#x27;</span>], ans);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>执行用时：8 ms, 在所有 Java 提交中击败了27.19% 的用户<br>内存消耗：40.8 MB, 在所有 Java 提交中击败了5.17% 的用户</p><p>java map 新特性</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxNumberOfBalloons</span><span class="hljs-params">(String text)</span> </span>&#123;<br>        Map&lt;Character, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        map.put(<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-number">0</span>);<br>        map.put(<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-number">0</span>);<br>        map.put(<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-number">0</span>);<br>        map.put(<span class="hljs-string">&#x27;n&#x27;</span>,<span class="hljs-number">0</span>);<br>        map.put(<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> ch: text.toCharArray()) &#123;<br>            map.computeIfPresent(ch, (key, oldValue) -&gt; oldValue+<span class="hljs-number">1</span>);<br>        &#125;<br>        map.compute(<span class="hljs-string">&#x27;l&#x27;</span>,(key, oldValue) -&gt; oldValue / <span class="hljs-number">2</span>);<br>        map.compute(<span class="hljs-string">&#x27;o&#x27;</span>,(key, oldValue) -&gt; oldValue / <span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">int</span> ans = Collections.min(map.values());<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>剑指 Offer 57. 和为s的两个数字</title>
     <link href="/2022/02/12/leetcode/offer57/"/>
     <url>/2022/02/12/leetcode/offer57/</url>

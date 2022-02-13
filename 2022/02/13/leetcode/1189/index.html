@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>剑指 Offer 57. 和为s的两个数字 - Pisces34</title>
+  <title>1189. “气球” 的最大数量 - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="剑指 Offer 57. 和为s的两个数字">
+            <span class="h2" id="subtitle" title="1189. “气球” 的最大数量">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-12 12:59" pubdate>
-        2022年2月12日 下午
+      <time datetime="2022-02-13 15:28" pubdate>
+        2022年2月13日 下午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      112 字
+      283 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      4
        分钟
     </span>
   
@@ -227,12 +227,17 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">剑指 Offer 57. 和为s的两个数字</h1>
+            <h1 style="display: none">1189. “气球” 的最大数量</h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof/">https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof/</a></p>
-<p>执行用时：1 ms, 在所有 Java 提交中击败了99.43% 的用户<br>内存消耗：60.2 MB, 在所有 Java 提交中击败了5.61% 的用户</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length-<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (nums[right] + nums[left] != target) &#123;<br>            <span class="hljs-keyword">if</span> (nums[right] + nums[left] &lt; target) &#123;<br>                left++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                right--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">int</span>[] ans = &#123;nums[left], nums[right]&#125;;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-number-of-balloons/">https://leetcode-cn.com/problems/maximum-number-of-balloons/</a></p>
+<p>执行用时：1 ms, 在所有 Java 提交中击败了100.00% 的用户<br>内存消耗：39.6 MB, 在所有 Java 提交中击败了10.34% 的用户</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxNumberOfBalloons</span><span class="hljs-params">(String text)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span>[] chars = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">26</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> ch: text.toCharArray()) &#123;<br>            chars[ch - <span class="hljs-string">&#x27;a&#x27;</span>]++;<br>        &#125;<br>        <span class="hljs-comment">// 字符逐个比较最少数量</span><br>        ans = Math.min(chars[<span class="hljs-number">0</span>], chars[<span class="hljs-number">1</span>]);<br>        ans = Math.min(chars[<span class="hljs-string">&#x27;l&#x27;</span> - <span class="hljs-string">&#x27;a&#x27;</span>]/<span class="hljs-number">2</span>, ans);<br>        ans = Math.min(chars[<span class="hljs-string">&#x27;o&#x27;</span> - <span class="hljs-string">&#x27;a&#x27;</span>]/<span class="hljs-number">2</span>, ans);<br>        ans = Math.min(chars[<span class="hljs-string">&#x27;n&#x27;</span> - <span class="hljs-string">&#x27;a&#x27;</span>], ans);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>执行用时：8 ms, 在所有 Java 提交中击败了27.19% 的用户<br>内存消耗：40.8 MB, 在所有 Java 提交中击败了5.17% 的用户</p>
+<p>java map 新特性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxNumberOfBalloons</span><span class="hljs-params">(String text)</span> </span>&#123;<br>        Map&lt;Character, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        map.put(<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-number">0</span>);<br>        map.put(<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-number">0</span>);<br>        map.put(<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-number">0</span>);<br>        map.put(<span class="hljs-string">&#x27;n&#x27;</span>,<span class="hljs-number">0</span>);<br>        map.put(<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> ch: text.toCharArray()) &#123;<br>            map.computeIfPresent(ch, (key, oldValue) -&gt; oldValue+<span class="hljs-number">1</span>);<br>        &#125;<br>        map.compute(<span class="hljs-string">&#x27;l&#x27;</span>,(key, oldValue) -&gt; oldValue / <span class="hljs-number">2</span>);<br>        map.compute(<span class="hljs-string">&#x27;o&#x27;</span>,(key, oldValue) -&gt; oldValue / <span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">int</span> ans = Collections.min(map.values());<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -249,11 +254,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
-                    
                       <a class="hover-with-bg" href="/tags/Java/">Java</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">二分查找</a>
                     
                   </div>
                 
@@ -270,18 +271,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/13/leetcode/1189/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">1189. “气球” 的最大数量</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/12/leetcode/offer53-2/">
-                        <span class="hidden-mobile">剑指 Offer 53 - II. 0～n-1中缺失的数字</span>
+                      <a href="/2022/02/12/leetcode/offer57/">
+                        <span class="hidden-mobile">剑指 Offer 57. 和为s的两个数字</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
