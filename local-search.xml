@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>1380. 矩阵中的幸运数</title>
+    <link href="/2022/02/15/leetcode/1380/"/>
+    <url>/2022/02/15/leetcode/1380/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/lucky-numbers-in-a-matrix/">https://leetcode-cn.com/problems/lucky-numbers-in-a-matrix/</a></p><p>执行用时：148 ms, 在所有 Swift 提交中击败了100.00% 的用户<br>内存消耗：14.1 MB, 在所有 Swift 提交中击败了14.29% 的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">luckyNumbers</span> (<span class="hljs-keyword">_</span> <span class="hljs-params">matrix</span>: [[<span class="hljs-type">Int</span>]])</span> -&gt; [<span class="hljs-type">Int</span>] &#123;<br>        <span class="hljs-keyword">let</span> rows <span class="hljs-operator">=</span> matrix.count<br>        <span class="hljs-keyword">let</span> cols <span class="hljs-operator">=</span> matrix[<span class="hljs-number">0</span>].count<br>        <span class="hljs-keyword">var</span> row <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, column <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>        <span class="hljs-keyword">var</span> ans <span class="hljs-operator">=</span> [<span class="hljs-type">Int</span>]()<br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> rows &#123;<br>            <span class="hljs-keyword">var</span> maxNum <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, minNum <span class="hljs-operator">=</span> <span class="hljs-number">100001</span><br>            <span class="hljs-keyword">var</span> flag <span class="hljs-operator">=</span> <span class="hljs-literal">true</span><br>            <span class="hljs-comment">// 横向比较，i为当前所在行</span><br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> cols &#123;<br>                <span class="hljs-keyword">if</span> matrix[i][j] <span class="hljs-operator">&lt;</span> minNum &#123;<br>                    minNum <span class="hljs-operator">=</span> matrix[i][j]<br>                    row <span class="hljs-operator">=</span> i<br>                    column <span class="hljs-operator">=</span> j<br>                &#125;<br>            &#125;<br>            <span class="hljs-comment">// 最小值坐标即当前最大值坐标</span><br>            maxNum <span class="hljs-operator">=</span> matrix[row][column]<br>            <span class="hljs-comment">// 垂直比较，固定列column，不是最大值则修改flag</span><br>            <span class="hljs-keyword">for</span> v <span class="hljs-keyword">in</span> <span class="hljs-number">0</span> <span class="hljs-operator">..&lt;</span> rows &#123;<br>                <span class="hljs-keyword">if</span> maxNum <span class="hljs-operator">&lt;</span> matrix[v][column] &#123;<br>                    flag <span class="hljs-operator">=</span> <span class="hljs-literal">false</span><br>                    <span class="hljs-keyword">break</span><br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> flag <span class="hljs-operator">==</span> <span class="hljs-literal">true</span> &#123;<br>                ans.append(maxNum)<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>矩阵</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>540. 有序数组中的单一元素</title>
     <link href="/2022/02/14/leetcode/540/"/>
     <url>/2022/02/14/leetcode/540/</url>
