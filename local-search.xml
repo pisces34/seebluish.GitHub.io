@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>剑指 Offer 57 - II. 和为s的连续正数序列</title>
+    <link href="/2022/02/15/leetcode/offer57-2/"/>
+    <url>/2022/02/15/leetcode/offer57-2/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/">https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/</a></p><p>执行用时：4 ms, 在所有 Swift 提交中击败了91.80% 的用户<br>内存消耗：13.6 MB, 在所有 Swift 提交中击败了70.49% 的用户</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">findContinuousSequence</span>(<span class="hljs-keyword">_</span> <span class="hljs-params">target</span>: <span class="hljs-type">Int</span>)</span> -&gt; [[<span class="hljs-type">Int</span>]] &#123;<br>        <span class="hljs-keyword">var</span> left <span class="hljs-operator">=</span> <span class="hljs-number">1</span>, right <span class="hljs-operator">=</span> <span class="hljs-number">2</span><br>        <span class="hljs-keyword">var</span> ans <span class="hljs-operator">=</span> [[<span class="hljs-type">Int</span>]]()<br>        <span class="hljs-keyword">while</span> left <span class="hljs-operator">&lt;</span> right &#123;<br>            <span class="hljs-comment">// 等差数列求和</span><br>            <span class="hljs-keyword">let</span> sum <span class="hljs-operator">=</span> (left <span class="hljs-operator">+</span> right) <span class="hljs-operator">*</span> (right <span class="hljs-operator">-</span> left <span class="hljs-operator">+</span> <span class="hljs-number">1</span>) <span class="hljs-operator">/</span> <span class="hljs-number">2</span><br>            <span class="hljs-keyword">if</span> sum <span class="hljs-operator">==</span> target &#123;<br>                ans.append(<span class="hljs-type">Array</span>.<span class="hljs-keyword">init</span>(left<span class="hljs-operator">...</span>right))<br>                left <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> sum <span class="hljs-operator">&lt;</span> target &#123;<br>                right <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                left <span class="hljs-operator">+=</span> <span class="hljs-number">1</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>双指针</tag>
+      
+      <tag>Swift</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>1380. 矩阵中的幸运数</title>
     <link href="/2022/02/15/leetcode/1380/"/>
     <url>/2022/02/15/leetcode/1380/</url>
