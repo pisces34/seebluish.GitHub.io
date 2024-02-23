@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>3042. 统计前后缀下标对 I</title>
+    <link href="/2024/02/23/leetcode/3042/"/>
+    <url>/2024/02/23/leetcode/3042/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/description/">https://leetcode.cn/problems/count-prefix-and-suffix-pairs-i/description/</a></p><h3 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">countPrefixSuffixPairs</span>(<span class="hljs-params">words: <span class="hljs-built_in">string</span>[]</span>): <span class="hljs-title">number</span> </span>&#123;<br>    <span class="hljs-keyword">let</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; words.length - <span class="hljs-number">1</span>; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>; j &lt; words.length; j++) &#123;<br>            <span class="hljs-keyword">if</span> (isPrefixAndSuffix(words[i], words[j])) &#123;<br>                res ++;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isPrefixAndSuffix</span>(<span class="hljs-params">str1, str2</span>): <span class="hljs-title">boolean</span> </span>&#123;<br>    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(i &lt; str1.length) &#123;<br>        <span class="hljs-keyword">if</span> (str1[i] != str2[j]) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        i++;<br>        j++;<br>    &#125;<br>    i = <span class="hljs-number">0</span>, j = str2.length - str1.length;<br>    <span class="hljs-keyword">while</span>(i &lt; str1.length) &#123;<br>        <span class="hljs-keyword">if</span> (str1[i] != str2[j]) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        i++;<br>        j++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数组</tag>
+      
+      <tag>TypeScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2811. 判断是否能拆分数组</title>
     <link href="/2023/08/10/leetcode/2811/"/>
     <url>/2023/08/10/leetcode/2811/</url>
