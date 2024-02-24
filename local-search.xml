@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>3038. 相同分数的最大操作数目 I</title>
+    <link href="/2024/02/24/leetcode/3038/"/>
+    <url>/2024/02/24/leetcode/3038/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-i/description/">https://leetcode.cn/problems/maximum-number-of-operations-with-the-same-score-i/description/</a></p><h3 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">maxOperations</span>(<span class="hljs-params">nums: <span class="hljs-built_in">number</span>[]</span>): <span class="hljs-title">number</span> </span>&#123;<br>    <span class="hljs-keyword">let</span> sum = nums[<span class="hljs-number">0</span>] + nums[<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">let</span> count = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; nums.length; i++) &#123;<br>        <span class="hljs-keyword">if</span> (nums[i] + nums[i+<span class="hljs-number">1</span>] == sum) &#123;<br>            count ++;<br>            i++;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数组</tag>
+      
+      <tag>TypeScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>3042. 统计前后缀下标对 I</title>
     <link href="/2024/02/23/leetcode/3042/"/>
     <url>/2024/02/23/leetcode/3042/</url>
@@ -363,9 +390,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Java</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -922,9 +949,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Java</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -949,9 +976,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Java</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -1051,9 +1078,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -1103,11 +1130,11 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Java</tag>
       
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -1724,9 +1751,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -1751,9 +1778,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -1778,9 +1805,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -2245,8 +2272,6 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Java</tag>
       
       <tag>Swift</tag>
@@ -2254,6 +2279,8 @@
       <tag>二叉树</tag>
       
       <tag>递归</tag>
+      
+      <tag>C++</tag>
       
       <tag>栈</tag>
       
@@ -2309,9 +2336,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>C++</tag>
       
       <tag>Stack</tag>
       
@@ -2423,9 +2450,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -2450,9 +2477,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -2685,9 +2712,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>字符串</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -2712,9 +2739,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -2791,9 +2818,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -2847,9 +2874,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Java</tag>
+      
+      <tag>C++</tag>
       
       <tag>贪心算法</tag>
       
@@ -2878,9 +2905,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>字符串</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -2932,9 +2959,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
       <tag>滑动窗口</tag>
       
@@ -3071,9 +3098,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
       <tag>双指针</tag>
       
@@ -3125,9 +3152,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
     </tags>
     
@@ -3152,9 +3179,9 @@
     
     <tags>
       
-      <tag>字符串</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>字符串</tag>
       
       <tag>双指针</tag>
       
@@ -3422,13 +3449,13 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Java</tag>
       
       <tag>数组</tag>
       
       <tag>Swift</tag>
+      
+      <tag>C++</tag>
       
       <tag>双指针</tag>
       
@@ -3513,11 +3540,11 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
       
       <tag>链表</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -3594,9 +3621,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>C++</tag>
       
       <tag>双指针</tag>
       
@@ -3623,11 +3650,11 @@
     
     <tags>
       
-      <tag>C++</tag>
+      <tag>Swift</tag>
       
       <tag>字符串</tag>
       
-      <tag>Swift</tag>
+      <tag>C++</tag>
       
     </tags>
     
@@ -3652,9 +3679,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>C++</tag>
       
       <tag>双指针</tag>
       
@@ -3681,9 +3708,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>C++</tag>
       
       <tag>双指针</tag>
       
@@ -3710,9 +3737,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>C++</tag>
       
       <tag>双指针</tag>
       
@@ -3739,9 +3766,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -3793,11 +3820,11 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
       
       <tag>链表</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -3849,11 +3876,11 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Swift</tag>
       
       <tag>链表</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -4088,9 +4115,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>字符串</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -4169,9 +4196,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Java</tag>
+      
+      <tag>C++</tag>
       
       <tag>双指针</tag>
       
@@ -4198,9 +4225,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>Java</tag>
+      
+      <tag>C++</tag>
       
       <tag>Set</tag>
       
@@ -4283,9 +4310,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>字符串</tag>
+      
+      <tag>C++</tag>
       
       <tag>回文字符串</tag>
       
@@ -4312,9 +4339,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>矩阵</tag>
+      
+      <tag>C++</tag>
       
       <tag>vector</tag>
       
@@ -4341,11 +4368,11 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>数组</tag>
       
       <tag>矩阵</tag>
+      
+      <tag>C++</tag>
       
     </tags>
     
@@ -4370,9 +4397,9 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
       <tag>链表</tag>
+      
+      <tag>C++</tag>
       
       <tag>双指针</tag>
       
@@ -4399,13 +4426,13 @@
     
     <tags>
       
-      <tag>C++</tag>
-      
-      <tag>反转链表</tag>
-      
       <tag>Swift</tag>
       
+      <tag>C++</tag>
+      
       <tag>三指针</tag>
+      
+      <tag>反转链表</tag>
       
     </tags>
     
