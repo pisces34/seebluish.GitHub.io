@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>58. 最后一个单词的长度</title>
+    <link href="/2024/02/26/leetcode/58/"/>
+    <url>/2024/02/26/leetcode/58/</url>
+    
+    <content type="html"><![CDATA[<p>题目链接：<a href="https://leetcode.cn/problems/length-of-last-word/description/">https://leetcode.cn/problems/length-of-last-word/description/</a></p><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lengthOfLastWord</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        String ss = s.trim();<br>        <span class="hljs-keyword">int</span> n = ss.length();<br>        <span class="hljs-keyword">while</span>(n &gt;= <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">if</span> (ss.charAt(n-<span class="hljs-number">1</span>) != <span class="hljs-string">&#x27; &#x27;</span>) &#123;<br>                res++;<br>                n--;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>数组</tag>
+      
+      <tag>字符串</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>3038. 相同分数的最大操作数目 I</title>
     <link href="/2024/02/24/leetcode/3038/"/>
     <url>/2024/02/24/leetcode/3038/</url>
