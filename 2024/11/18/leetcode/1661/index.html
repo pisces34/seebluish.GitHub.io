@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>Pisces34</title>
+  <title>1661. Average Time of Process per Machine - Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="1661. Average Time of Process per Machine">
               
             </span>
 
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      1.1k 字
     </span>
   
 
@@ -227,10 +227,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">1661. Average Time of Process per Machine</h1>
             
             <div class="markdown-body">
-              <p>Example 1:</p>
+              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&amp;envId=sql-free-50">https://leetcode.cn/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&amp;envId=sql-free-50</a></p>
+<p>Example 1:</p>
 <p>Input:<br>Activity table:<br>+————+————+—————+———–+<br>| machine_id | process_id | activity_type | timestamp |<br>+————+————+—————+———–+<br>| 0          | 0          | start         | 0.712     |<br>| 0          | 0          | end           | 1.520     |<br>| 0          | 1          | start         | 3.140     |<br>| 0          | 1          | end           | 4.120     |<br>| 1          | 0          | start         | 0.550     |<br>| 1          | 0          | end           | 1.550     |<br>| 1          | 1          | start         | 0.430     |<br>| 1          | 1          | end           | 1.420     |<br>| 2          | 0          | start         | 4.100     |<br>| 2          | 0          | end           | 4.512     |<br>| 2          | 1          | start         | 2.500     |<br>| 2          | 1          | end           | 5.000     |<br>+————+————+—————+———–+<br>Output:<br>+————+—————–+<br>| machine_id | processing_time |<br>+————+—————–+<br>| 0          | 0.894           |<br>| 1          | 0.995           |<br>| 2          | 1.456           |<br>+————+—————–+<br>Explanation:<br>There are 3 machines running 2 processes each.<br>“<br>Machine 0’s average time is ((1.520 - 0.712) + (4.120 - 3.140)) / 2 = 0.894<br>Machine 1’s average time is ((1.550 - 0.550) + (1.420 - 0.430)) / 2 = 0.995<br>Machine 2’s average time is ((4.512 - 4.100) + (5.000 - 2.500)) / 2 = 1.456<br>“</p>
 <h1 id="Write-your-MySQL-query-statement-below-1"><a href="#Write-your-MySQL-query-statement-below-1" class="headerlink" title="Write your MySQL query statement below 1"></a>Write your MySQL query statement below 1</h1><p>SELECT machine_id,<br>ROUND(SUM(IF(activity_type=”start”,-timestamp,timestamp)) / COUNT(DISTINCT process_id) , 3) AS processing_time<br>FROM Activity<br>GROUP BY machine_id;</p>
 <p>使用 IF(activity_type=”start”, -timestamp, timestamp) 将 start 时间取负值，而 end 时间保持正值。<br>通过 SUM() 累加所有 timestamp，由于 start 和 end 是成对出现的，最终得到的是每个 process_id 的时间差总和。<br>COUNT(DISTINCT process_id) 计算每台机器中唯一的 process_id 数量。<br>SUM / COUNT 求得每台机器的平均处理时间，最终用 ROUND 保留 3 位小数。<br>优点：<br>简洁清晰，逻辑简单，直接按列运算，不需要表连接。<br>不依赖数据的行数或顺序，具有较好的可读性。<br>缺点：<br>依赖于 IF 判断，将正负时间差叠加在一起，这种方式在数据量非常大时可能会有一定的性能开销。<br>假如存在非成对的 start 和 end 记录（例如，缺少 start 或 end），结果可能会不准确。</p>
@@ -452,6 +453,20 @@
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/">leetcode算法题</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
+                    
+                  </div>
                 
               </div>
               
