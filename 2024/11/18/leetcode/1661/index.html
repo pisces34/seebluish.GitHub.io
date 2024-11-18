@@ -20,7 +20,7 @@
   
     <meta name="google-site-verification" content="ehKoptg4Br2088SU6ZS4QY2SaUpxMeCnsCUwpCVG1_8" />
   
-  <title>66. 加一 - Pisces34</title>
+  <title>Pisces34</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="66. 加一">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2024-05-27 10:49" pubdate>
-        2024年5月27日 上午
+      <time datetime="2024-11-18 09:56" pubdate>
+        2024年11月18日 上午
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      119 字
+      1k 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      15
        分钟
     </span>
   
@@ -227,34 +227,231 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">66. 加一</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/plus-one/">https://leetcode.cn/problems/plus-one/</a></p>
-<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>执行用时分布0ms击败100.00%使用 Java 的用户<br>消耗内存分布40.75MB击败85.65%使用 Java 的用户</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] plusOne(<span class="hljs-keyword">int</span>[] digits) &#123;<br>        <span class="hljs-keyword">int</span> last = digits.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = last; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>            <span class="hljs-keyword">if</span> (digits[i] + <span class="hljs-number">1</span> == <span class="hljs-number">10</span>) &#123; <span class="hljs-comment">// 有进位</span><br>                digits[i] = <span class="hljs-number">0</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                digits[i] += <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">return</span> digits;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 进位到第一位发生溢出，例如[9] 返回 [1,0]</span><br>        <span class="hljs-keyword">int</span>[] overflow = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[digits.length + <span class="hljs-number">1</span>];<br>        overflow[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">return</span> overflow;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p>Example 1:</p>
+<p>Input:<br>Activity table:<br>+————+————+—————+———–+<br>| machine_id | process_id | activity_type | timestamp |<br>+————+————+—————+———–+<br>| 0          | 0          | start         | 0.712     |<br>| 0          | 0          | end           | 1.520     |<br>| 0          | 1          | start         | 3.140     |<br>| 0          | 1          | end           | 4.120     |<br>| 1          | 0          | start         | 0.550     |<br>| 1          | 0          | end           | 1.550     |<br>| 1          | 1          | start         | 0.430     |<br>| 1          | 1          | end           | 1.420     |<br>| 2          | 0          | start         | 4.100     |<br>| 2          | 0          | end           | 4.512     |<br>| 2          | 1          | start         | 2.500     |<br>| 2          | 1          | end           | 5.000     |<br>+————+————+—————+———–+<br>Output:<br>+————+—————–+<br>| machine_id | processing_time |<br>+————+—————–+<br>| 0          | 0.894           |<br>| 1          | 0.995           |<br>| 2          | 1.456           |<br>+————+—————–+<br>Explanation:<br>There are 3 machines running 2 processes each.<br>“<br>Machine 0’s average time is ((1.520 - 0.712) + (4.120 - 3.140)) / 2 = 0.894<br>Machine 1’s average time is ((1.550 - 0.550) + (1.420 - 0.430)) / 2 = 0.995<br>Machine 2’s average time is ((4.512 - 4.100) + (5.000 - 2.500)) / 2 = 1.456<br>“</p>
+<h1 id="Write-your-MySQL-query-statement-below-1"><a href="#Write-your-MySQL-query-statement-below-1" class="headerlink" title="Write your MySQL query statement below 1"></a>Write your MySQL query statement below 1</h1><p>SELECT machine_id,<br>ROUND(SUM(IF(activity_type=”start”,-timestamp,timestamp)) / COUNT(DISTINCT process_id) , 3) AS processing_time<br>FROM Activity<br>GROUP BY machine_id;</p>
+<p>使用 IF(activity_type=”start”, -timestamp, timestamp) 将 start 时间取负值，而 end 时间保持正值。<br>通过 SUM() 累加所有 timestamp，由于 start 和 end 是成对出现的，最终得到的是每个 process_id 的时间差总和。<br>COUNT(DISTINCT process_id) 计算每台机器中唯一的 process_id 数量。<br>SUM / COUNT 求得每台机器的平均处理时间，最终用 ROUND 保留 3 位小数。<br>优点：<br>简洁清晰，逻辑简单，直接按列运算，不需要表连接。<br>不依赖数据的行数或顺序，具有较好的可读性。<br>缺点：<br>依赖于 IF 判断，将正负时间差叠加在一起，这种方式在数据量非常大时可能会有一定的性能开销。<br>假如存在非成对的 start 和 end 记录（例如，缺少 start 或 end），结果可能会不准确。</p>
+<h1 id="Write-your-MySQL-query-statement-below-2"><a href="#Write-your-MySQL-query-statement-below-2" class="headerlink" title="Write your MySQL query statement below 2"></a>Write your MySQL query statement below 2</h1><p>select machine_id,<br>round(<br>    (sum(case activity_type when ‘end’ then timestamp else 0 end)<br>    + sum(case activity_type when ‘start’ then -timestamp else 0 end))<br>    /(count(*)/2),3) processing_time<br>from Activity<br>group by machine_id</p>
+<p>解释：<br>使用 CASE 条件判断，将 end 的 timestamp 累加，将 start 的 timestamp 取负值。<br>SUM() 计算所有 timestamp 的加和，得到每台机器的所有时间差。<br>COUNT(<em>) / 2 假设每个 process_id 有两条记录（start 和 end），因此通过总行数除以 2 来得到进程数。<br>最后计算平均时间差并用 ROUND 保留 3 位小数。<br>优点：<br>使用 COUNT(</em>) / 2 来推断进程数量，避免了 COUNT(DISTINCT process_id) 的开销。<br>表达式对数据规律性（成对出现）进行了假设，适用于严格成对的情况。<br>缺点：<br>假如数据存在不完整的 start 或 end 记录，COUNT(*) / 2 的假设将导致错误的计算结果。<br>逻辑稍显复杂，尤其在理解 CASE 和 COUNT 的作用时可能不直观。</p>
+<h1 id="Write-your-MySQL-query-statement-below-3"><a href="#Write-your-MySQL-query-statement-below-3" class="headerlink" title="Write your MySQL query statement below 3"></a>Write your MySQL query statement below 3</h1><p>SELECT<br>    a.machine_id,<br>    ROUND(<br>        SUM(b.timestamp - a.timestamp) / COUNT(a.machine_id = b.machine_id) , 3)as  processing_time<br>FROM<br>    Activity a<br>LEFT JOIN<br>    Activity b<br>ON<br>    a.machine_id = b.machine_id<br>AND<br>    a.activity_type = ‘start’<br>AND<br>    b.activity_type = ‘end’<br>AND<br>    a.process_id = b.process_id<br>WHERE<br>    b.machine_id is NOT NULL<br>GROUP BY<br>    a.machine_id</p>
+<p>解释：<br>将表 Activity 自连接，通过 LEFT JOIN 连接 start 和 end 的记录。<br>ON 条件：匹配相同的 machine_id 和 process_id，并且 a 为 start，b 为 end。<br>SUM(b.timestamp - a.timestamp) 累加每个 process_id 的时间差。<br>COUNT(a.machine_id = b.machine_id) 计算有效的匹配对数量（即 start 和 end 配对的数量）。<br>计算每台机器的平均处理时间并用 ROUND 保留 3 位小数。<br>优点：<br>严格基于成对的 start 和 end 记录，不会受不完整记录的影响。<br>数据更精确，适合处理复杂或不完全成对的数据场景。<br>缺点：<br>使用 JOIN 操作，性能开销较大，特别是在数据量很大的情况下。<br>写法相对复杂，可读性较低。</p>
+<table>
+<thead>
+<tr>
+<th>machine_id</th>
+<th>process_id</th>
+<th>activity_type</th>
+<th>timestamp</th>
+<th>machine_id</th>
+<th>process_id</th>
+<th>activity_type</th>
+<th>timestamp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>start</td>
+<td>0.712</td>
+<td>0</td>
+<td>0</td>
+<td>end</td>
+<td>1.52</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>end</td>
+<td>1.52</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>start</td>
+<td>3.14</td>
+<td>0</td>
+<td>1</td>
+<td>end</td>
+<td>4.12</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>end</td>
+<td>4.12</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>start</td>
+<td>0.55</td>
+<td>1</td>
+<td>0</td>
+<td>end</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>end</td>
+<td>1.55</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>start</td>
+<td>0.43</td>
+<td>1</td>
+<td>1</td>
+<td>end</td>
+<td>1.42</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>end</td>
+<td>1.42</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>start</td>
+<td>4.1</td>
+<td>2</td>
+<td>0</td>
+<td>end</td>
+<td>4.512</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>end</td>
+<td>4.512</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>start</td>
+<td>2.5</td>
+<td>2</td>
+<td>1</td>
+<td>end</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>end</td>
+<td>5</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>machine_id</th>
+<th>process_id</th>
+<th>activity_type</th>
+<th>timestamp</th>
+<th>machine_id</th>
+<th>process_id</th>
+<th>activity_type</th>
+<th>timestamp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>start</td>
+<td>0.712</td>
+<td>0</td>
+<td>0</td>
+<td>end</td>
+<td>1.52</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>start</td>
+<td>3.14</td>
+<td>0</td>
+<td>1</td>
+<td>end</td>
+<td>4.12</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>start</td>
+<td>0.55</td>
+<td>1</td>
+<td>0</td>
+<td>end</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>start</td>
+<td>0.43</td>
+<td>1</td>
+<td>1</td>
+<td>end</td>
+<td>1.42</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>start</td>
+<td>4.1</td>
+<td>2</td>
+<td>0</td>
+<td>end</td>
+<td>4.512</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>start</td>
+<td>2.5</td>
+<td>2</td>
+<td>1</td>
+<td>end</td>
+<td>5</td>
+</tr>
+</tbody></table>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/leetcode%E7%AE%97%E6%B3%95%E9%A2%98/">leetcode算法题</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
-                    
-                  </div>
                 
               </div>
               
@@ -269,18 +466,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/18/leetcode/1661/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/05/25/leetcode/485/">
-                        <span class="hidden-mobile">485. 最大连续 1 的个数</span>
+                      <a href="/2024/05/27/leetcode/66/">
+                        <span class="hidden-mobile">66. 加一</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
